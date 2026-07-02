@@ -1,0 +1,14 @@
+{
+	"name": "@Billow-web/env",
+	"version": "0.0.0",
+	"private": true,
+	"type": "module",
+	"exports": {
+		"./server": "./src/server.js",
+		"./web": "./src/web.js"
+	},
+	"dependencies": {
+		"dotenv": "^17.2.2",
+		"zod": "^4.1.13"
+	}
+}
