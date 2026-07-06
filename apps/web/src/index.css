@@ -1,1 +1,21 @@
 @import "@Billow-web/ui/globals.css";
+
+/* Billow brand tokens */
+@theme {
+	--color-brand-navy: #12345b;
+	--color-brand-navy-light: #1c4a7e;
+	--color-brand-green: #22c55e;
+	--color-brand-green-dark: #16a34a;
+	--color-brand-cream: #fdecc8;
+	--color-brand-sky: #dbeafe;
+	--color-brand-purple: #241541;
+	--color-brand-purple-light: #3a2560;
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+body {
+	background-color: #ffffff;
+}
