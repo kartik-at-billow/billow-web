@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Mail, Menu, X } from "lucide-react";
+import { Mail, Menu, X, ArrowRight } from "lucide-react";
 import { cn } from "@Billow-web/ui/lib/utils";
 import { Logo } from "@/components/Logo";
 
@@ -31,7 +31,7 @@ export function Navbar() {
 			)}
 		>
 			<nav className="mx-auto flex h-16 max-w-[1400px] items-center justify-between px-5">
-				<Logo className="h-9" />
+				<Logo className="h-15" />
 
 				<div className="hidden items-center gap-8 md:flex">
 					{NAV_LINKS.map((link) => (
@@ -48,10 +48,11 @@ export function Navbar() {
 				<div className="hidden md:block">
 					<a
 						href="#contact"
-						className="inline-flex items-center gap-2 rounded-lg bg-black px-5 py-2.5 text-sm font-semibold text-white transition-transform hover:-translate-y-0.5 hover:bg-black/85"
+						className="inline-flex items-center gap-2 bg-black px-5 py-2.5 text-sm font-semibold text-white transition-transform hover:-translate-y-0.5 hover:bg-black/85"
 					>
-						<Mail className="size-4" />
 						Get in Touch
+						<ArrowRight className="size-4" />
+
 					</a>
 				</div>
 

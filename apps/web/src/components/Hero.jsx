@@ -80,11 +80,11 @@ export function Hero() {
 
 	return (
 		<section
-			id="top"
-			onMouseEnter={() => setPaused(true)}
-			onMouseLeave={() => setPaused(false)}
-			className="relative overflow-hidden bg-gradient-to-b from-brand-cream via-brand-cream/40 to-white pt-24 pb-12"
-		>
+  id="top"
+  onMouseEnter={() => setPaused(true)}
+  onMouseLeave={() => setPaused(false)}
+  className="relative overflow-hidden bg-gradient-to-b from-blue-100 via-blue-50 to-white pt-24 pb-12"
+>
 			<div className="mx-auto max-w-4xl px-5 text-center">
 				{/* Rotating content — fixed min-height keeps the CTA row from jumping */}
 				<div className="flex min-h-[20rem] flex-col justify-center sm:min-h-[24rem]">
@@ -119,14 +119,14 @@ export function Hero() {
 						/>
 						<a
 							href="#contact"
-							className="inline-flex items-center justify-center rounded-lg bg-black px-8 py-3.5 text-sm font-semibold text-white shadow-lg shadow-black/10 transition-transform hover:-translate-y-0.5"
+							className="inline-flex items-center justify-center bg-black px-8 py-3.5 text-sm font-semibold text-white shadow-lg shadow-black/10 transition-transform hover:-translate-y-0.5"
 						>
 							Get Started
 						</a>
 					</div>
 					<a
 						href="#expertise"
-						className="inline-flex items-center justify-center rounded-lg border border-black/15 bg-white px-8 py-3.5 text-sm font-semibold text-neutral-800 transition-colors hover:bg-muted"
+						className="inline-flex items-center justify-center border border-black/15 bg-white px-8 py-3.5 text-sm font-semibold text-neutral-800 transition-colors hover:bg-muted"
 					>
 						See Demo
 					</a>

@@ -18,7 +18,7 @@ const COLUMNS = [
 	},
 	{
 		title: "Connect",
-		links: ["Contact Us", "Get a Quote", "Privacy Policy", "Cookie Policy"],
+		links: ["Contact Us", "Get a Quote"],
 	},
 ];
 
@@ -96,16 +96,7 @@ export function Footer() {
 					<p className="text-xs text-muted-foreground">
 						© 2026 Billow LLC. All rights reserved.
 					</p>
-					<div className="flex flex-wrap items-center justify-center gap-3">
-						{PARTNERS.map((p) => (
-							<span
-								key={p}
-								className="rounded-md border border-black/10 bg-muted/40 px-3 py-1.5 text-[10px] font-semibold uppercase tracking-wide text-muted-foreground"
-							>
-								{p}
-							</span>
-						))}
-					</div>
+				
 				</div>
 			</div>
 		</footer>

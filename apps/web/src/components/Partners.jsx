@@ -20,10 +20,10 @@ export function Partners() {
 						className="pointer-events-none absolute inset-0 opacity-15 [background:repeating-conic-gradient(from_0deg_at_50%_42%,rgba(255,255,255,0.6)_0deg_1deg,transparent_1deg_5deg)]"
 					/>
 					<div className="relative max-w-md">
-						<p className="text-sm font-semibold uppercase tracking-[0.35em]">
+						<p className="text-sm font-semibold uppercase tracking-[0.15em]">
 							Our Partners
 						</p>
-						<p className="mt-5 text-lg font-medium leading-relaxed">
+						<p className="mt-3 text-lg font-small leading-relaxed">
 							Leveraging partnerships with AWS, Microsoft, and Google, we fuse
 							our services to deliver solutions that exceed customer
 							expectations.
