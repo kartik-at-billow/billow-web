@@ -51,7 +51,7 @@ export function Footer() {
 					<div>
 						<Logo className="h-15" />
 						<p className="mt-5 max-w-xs text-sm leading-relaxed text-muted-foreground">
-							Driving innovation through expert IT solutions — cloud,
+							Driving innovation through expert IT solutions - cloud,
 							cybersecurity, automation, software development and staffing since
 							2014.
 						</p>

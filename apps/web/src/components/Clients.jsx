@@ -4,43 +4,43 @@ const CLIENTS = [
   {
     src: "/clients/caltranslogo.png",
     alt: "Caltrans",
-    description: "Trusted transportation partner.",
+    description: "Delivered secure digital solutions supporting transportation operations.",
   },
   {
     src: "/clients/DSH_header_logo.png",
     alt: "California Department of State Hospitals",
-    description: "Supporting healthcare transformation.",
+    description: "Supported secure healthcare technology and operational modernization.",
   },
   {
     src: "/clients/calstrs_logo.avif",
     alt: "CalSTRS",
-    description: "Reliable pension technology solutions.",
+    description: "Built reliable enterprise solutions for secure financial and member services.",
   },
   {
     src: "/clients/california_public_utilities.png",
     alt: "California Public Utilities Commission",
-    description: "Modernizing public utility systems.",
+    description: "Enabled efficient digital systems for regulatory and public service operations.",
   },
   {
     src: "/clients/dmv_log.png",
     alt: "California DMV",
-    description: "Digital government services.",
+    description: "Helped modernize citizen-facing digital services and internal workflows.",
   },
   {
     src: "/clients/shartsis_logo.svg",
     alt: "Shartsis",
-    description: "Secure legal technology.",
+    description: "Developed secure, reliable technology solutions for legal operations.",
   },
   {
     src: "/clients/Xterra_Web-Logo_Horz-wht.svg",
     alt: "Xterra",
     invert: true,
-    description: "Cloud-first enterprise solutions.",
+    description: "Collaborated on enterprise cloud and technology transformation initiatives",
   },
   {
     src: "/clients/logo-biomarin.svg",
     alt: "Biomarin",
-    description: "Innovative biotechnology solutions.",
+    description: "Supported scalable digital platforms for life sciences innovation.",
   },
 ];
 
@@ -62,7 +62,7 @@ function ClientCard({ client, borderRight, borderBottom }) {
       />
 
       {/* Hover Overlay */}
-      <div className="absolute inset-0 flex items-center justify-center bg-primary px-8 text-center opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+      <div className="absolute inset-0 flex items-center justify-center bg-blue-900 px-8 text-center opacity-0 transition-opacity duration-300 group-hover:opacity-100">
         <p className="text-lg font-medium leading-relaxed text-white">
           {client.description}
         </p>

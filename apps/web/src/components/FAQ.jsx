@@ -68,10 +68,6 @@ export function FAQ() {
 				<h2 className="mt-2 text-center text-3xl font-extrabold tracking-tight text-brand-navy sm:text-4xl">
 					Frequently Asked Questions
 				</h2>
-				<p className="mx-auto mt-4 max-w-md text-center text-sm text-muted-foreground">
-					Proactively answering FAQs boosts user confidence and cuts down on
-					support tickets.
-				</p>
 
 				<div className="mt-8 flex flex-col gap-3">
 					{FAQS.map((item, i) => (

@@ -1,53 +1,48 @@
 const PARTNERS = [
-	{ src: "/partners/microsoft-partner.png", alt: "Microsoft Partner" },
-	{ src: "/partners/Google-partner.png", alt: "Google Partner" },
-	{ src: "/partners/aws-partner.png", alt: "AWS Partner" },
+  { src: "/partners/microsoft-partner.png", alt: "Microsoft Partner" },
+  { src: "/partners/Google-partner.png", alt: "Google Partner" },
+  { src: "/partners/aws-partner.png", alt: "AWS Partner" },
 ];
 
 export function Partners() {
-	return (
-		<section id="partners" className="w-full">
-			<div className="grid md:grid-cols-2">
-				{/* Left — blue panel with intro copy */}
-				<div className="relative flex flex-col items-center justify-center overflow-hidden bg-[#2563eb] px-8 py-14 text-center text-white">
-					{/* radial glow + starburst rays to echo the reference texture */}
-					<div
-						aria-hidden="true"
-						className="pointer-events-none absolute inset-0 opacity-50 [background:radial-gradient(circle_at_50%_42%,rgba(255,255,255,0.35),transparent_60%)]"
-					/>
-					<div
-						aria-hidden="true"
-						className="pointer-events-none absolute inset-0 opacity-15 [background:repeating-conic-gradient(from_0deg_at_50%_42%,rgba(255,255,255,0.6)_0deg_1deg,transparent_1deg_5deg)]"
-					/>
-					<div className="relative max-w-md">
-						<p className="text-sm font-semibold uppercase tracking-[0.15em]">
-							Our Partners
-						</p>
-						<p className="mt-3 text-lg font-small leading-relaxed">
-							Leveraging partnerships with AWS, Microsoft, and Google, we fuse
-							our services to deliver solutions that exceed customer
-							expectations.
-						</p>
-					</div>
-				</div>
+  return (
+    <section
+      id="partners"
+      className="relative overflow-hidden bg-slate-950 py-15 text-white"
+    >
+      <div className="absolute inset-0 bg-blue-900" />
 
-				{/* Right — partner logos on a light panel */}
-				<div className="flex flex-wrap items-center justify-center gap-10 bg-[#e9eaec] px-8 py-14 sm:gap-14">
-					{PARTNERS.map((partner) => (
-						<div
-							key={partner.alt}
-							className="flex h-13 w-40 items-center justify-center"
-						>
-							<img
-								src={partner.src}
-								alt={partner.alt}
-								loading="lazy"
-								className="max-h-full max-w-full object-contain"
-							/>
-						</div>
-					))}
-				</div>
-			</div>
-		</section>
-	);
+      <div className="relative mx-auto max-w-7xl px-6">
+        <div className="mx-auto max-w-3xl text-center">
+          <span className="text-sm font-semibold uppercase tracking-[0.2em] text-primary-500">
+            Our Partners
+          </span>
+
+          <h2 className="mt-4 text-4xl font-bold">
+            Building Enterprise Solutions Together
+          </h2>
+
+          <p className="mt-6 text-lg leading-8 text-slate-300">
+            Through strategic partnerships with leading cloud providers, we
+            deliver secure, scalable, and innovative enterprise solutions.
+          </p>
+        </div>
+
+        <div className="mt-10 flex flex-wrap justify-center gap-8">
+          {PARTNERS.map((partner) => (
+            <div
+              key={partner.alt}
+              className="flex h-30 w-72 items-center justify-center bg-white p-8 shadow-lg transition-all duration-300"
+            >
+              <img
+                src={partner.src}
+                alt={partner.alt}
+                className="max-h-15 object-contain"
+              />
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
 }
