@@ -6,6 +6,7 @@ import { Stats } from "@/components/Stats";
 import { WhyBillow } from "@/components/WhyBillow";
 import { CaseStudies } from "@/components/CaseStudies";
 import { CtaBand } from "@/components/CtaBand";
+import { Partners } from "@/components/Partners";
 import { Footer } from "@/components/Footer";
 
 export default function Home() {
@@ -20,6 +21,7 @@ export default function Home() {
 				<WhyBillow />
 				<CaseStudies limit={2} showViewAll />
 				<CtaBand />
+				<Partners />
 			</main>
 			<Footer />
 		</div>
