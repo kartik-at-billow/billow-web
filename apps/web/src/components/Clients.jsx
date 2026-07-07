@@ -62,7 +62,7 @@ function ClientCard({ client, borderRight, borderBottom }) {
       />
 
       {/* Hover Overlay */}
-      <div className="absolute inset-0 flex items-center justify-center bg-blue-900 px-8 text-center opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+      <div className="absolute inset-0 flex items-center justify-center bg-brand-navy px-8 text-center opacity-0 transition-opacity duration-300 group-hover:opacity-100">
         <p className="text-lg font-medium leading-relaxed text-white">
           {client.description}
         </p>

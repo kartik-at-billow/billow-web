@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
+import { Link } from "react-router";
 import { cn } from "@Billow-web/ui/lib/utils";
 
 /**
@@ -83,7 +84,7 @@ export function Hero() {
   id="top"
   onMouseEnter={() => setPaused(true)}
   onMouseLeave={() => setPaused(false)}
-  className="relative overflow-hidden bg-gradient-to-b from-blue-100 via-blue-50 to-white pt-24 pb-12"
+  className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden bg-gradient-to-b from-blue-100 via-blue-50 to-white pt-16 pb-12"
 >
 			<div className="mx-auto max-w-4xl px-5 text-center">
 				{/* Rotating content — fixed min-height keeps the CTA row from jumping */}
@@ -117,19 +118,19 @@ export function Hero() {
 							aria-hidden="true"
 							className="pointer-events-none absolute -left-[8rem] -top-[4.5rem] hidden w-40 select-none mix-blend-multiply sm:block"
 						/>
-						<a
-							href="#contact"
+						<Link
+							to="/contact"
 							className="inline-flex items-center justify-center bg-black px-8 py-3.5 text-sm font-semibold text-white shadow-lg shadow-black/10 transition-transform hover:-translate-y-0.5"
 						>
 							Get Started
-						</a>
+						</Link>
 					</div>
-					<a
-						href="#expertise"
+					<Link
+						to="/services"
 						className="inline-flex items-center justify-center border border-black/15 bg-white px-8 py-3.5 text-sm font-semibold text-neutral-800 transition-colors hover:bg-muted"
 					>
 						See Demo
-					</a>
+					</Link>
 				</div>
 
 				{/* Carousel indicators */}
