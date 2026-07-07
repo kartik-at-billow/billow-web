@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Compass, PenTool, Rocket, LifeBuoy, Mail } from "lucide-react";
+import { Compass, PenTool, Rocket, LifeBuoy, ArrowRight } from "lucide-react";
 
 const STEPS = [
 	{
@@ -28,13 +28,14 @@ export function WhyBillow() {
 	return (
 		<section id="why-billow" className="relative bg-white">
 			{/* Overlapping call-to-action button */}
-			<div className="flex justify-center">
+			<div className="flex justify-center mb-15 mt-5">
 				<a
 					href="#contact"
-					className="relative z-10 inline-flex translate-y-1/2 items-center gap-2 rounded-full bg-black px-7 py-3.5 text-sm font-semibold text-white shadow-xl shadow-black/20 transition-transform hover:-translate-y-[calc(-50%+2px)]"
+					className="relative z-10 inline-flex translate-y-1/2 items-center gap-2 bg-black px-7 py-3.5 text-sm font-semibold text-white transition-transform hover:-translate-y-[calc(-50%+2px)]"
 				>
-					<Mail className="size-4" />
+					
 					Get in Touch
+					<ArrowRight className="size-4" />
 				</a>
 			</div>
 

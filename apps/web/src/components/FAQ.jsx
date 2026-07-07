@@ -5,24 +5,24 @@ import { cn } from "@Billow-web/ui/lib/utils";
 
 const FAQS = [
 	{
-		q: "Lightning-Fast Performance",
-		a: "Every engagement is engineered for speed — from optimized build pipelines to edge-cached delivery. We benchmark against Core Web Vitals and ship experiences that feel instant on any device.",
+		q: "What services do you offer?",
+		a: "We provide end-to-end IT solutions including cloud migration, cybersecurity, AI & automation, managed IT services, application development, and digital transformation consulting tailored to your business needs.",
 	},
 	{
-		q: "Fully Customizable Components",
-		a: "Our solutions are built on modular, reusable components so your product stays flexible. Swap themes, extend behavior, and adapt to new requirements without rewrites.",
+		q: "How do you ensure the security of our data?",
+		a: "Security is built into every engagement through Zero Trust principles, encryption, identity management, continuous monitoring, and industry best practices to protect your business.",
 	},
 	{
-		q: "Responsive by Default",
-		a: "Mobile, tablet, and desktop layouts are treated as first-class citizens. Interfaces adapt fluidly across breakpoints with no compromise on usability.",
+		q: "Can you help migrate our existing systems to the cloud?",
+		a: "Yes. We assess your current infrastructure, create a migration strategy, minimize downtime, and ensure a secure transition to cloud platforms like Microsoft Azure and AWS.",
 	},
 	{
-		q: "Tailwind CSS Powered",
-		a: "We use a utility-first styling system for consistency and velocity, backed by a design-token foundation that keeps your brand cohesive everywhere.",
+		q: "Do you provide ongoing support after deployment?",
+		a: "Absolutely. We offer managed support, maintenance, monitoring, performance optimization, and regular updates to ensure your systems continue running smoothly.",
 	},
 	{
-		q: "Dark Mode Support",
-		a: "Accessible light and dark themes come standard, respecting system preferences and giving your users control over their viewing experience.",
+		q: "What cloud platforms do you support?",
+		a: "We work with leading cloud providers including Microsoft Azure, Amazon Web Services (AWS), and hybrid cloud environments based on your business needs.",
 	},
 ];
 
@@ -33,13 +33,13 @@ function FaqItem({ item, isOpen, onToggle }) {
 				type="button"
 				onClick={onToggle}
 				aria-expanded={isOpen}
-				className="flex w-full items-center justify-between gap-4 px-5 py-4 text-left"
+				className="flex w-full items-center justify-between gap-4 px-5 py-4 text-left cursor-pointer"
 			>
 				<span className="text-sm font-semibold text-brand-navy sm:text-base">{item.q}</span>
 				<ChevronDown
 					className={cn(
 						"size-5 shrink-0 text-muted-foreground transition-transform duration-300",
-						isOpen && "rotate-180 text-brand-green-dark",
+						isOpen && "rotate-180 text-brand-blue",
 					)}
 				/>
 			</button>
@@ -65,9 +65,6 @@ export function FAQ() {
 	return (
 		<section id="faq" className="bg-white py-14">
 			<div className="mx-auto max-w-3xl px-5">
-				<p className="text-center text-xs font-bold uppercase tracking-widest text-brand-navy/60">
-					FAQ
-				</p>
 				<h2 className="mt-2 text-center text-3xl font-extrabold tracking-tight text-brand-navy sm:text-4xl">
 					Frequently Asked Questions
 				</h2>

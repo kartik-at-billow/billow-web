@@ -160,7 +160,7 @@ export function ContactForm() {
 
 								<button
 									type="submit"
-									className="inline-flex items-center justify-center gap-2 self-start rounded-lg bg-black px-8 py-3.5 text-sm font-semibold text-white shadow-lg shadow-black/10 transition-transform hover:-translate-y-0.5"
+									className="inline-flex items-center justify-center gap-2 self-start bg-black px-8 py-3.5 text-sm font-semibold text-white shadow-lg shadow-black/10 transition-transform hover:-translate-y-0.5"
 								>
 									Submit
 									<ArrowRight className="size-4" />

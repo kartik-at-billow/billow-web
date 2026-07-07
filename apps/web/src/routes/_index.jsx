@@ -10,16 +10,7 @@ import { FAQ } from "@/components/FAQ";
 import { Partners } from "@/components/Partners";
 import { Footer } from "@/components/Footer";
 
-export function meta() {
-	return [
-		{ title: "Billow LLC — We Turn Ideas Into Powerful Digital Products" },
-		{
-			name: "description",
-			content:
-				"From strategy to launch, Billow LLC partners with you to build exceptional digital experiences that drive real impact.",
-		},
-	];
-}
+
 
 export default function Home() {
 	return (
@@ -27,10 +18,10 @@ export default function Home() {
 			<Navbar />
 			<main>
 				<Hero />
-				<Clients />
 				<Expertise />
 				<Stats />
 				<WhyBillow />
+				<Clients />
 				<CaseStudies />
 				<ContactForm />
 				<FAQ />

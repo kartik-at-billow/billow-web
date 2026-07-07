@@ -36,7 +36,7 @@ export function Partners() {
 					{PARTNERS.map((partner) => (
 						<div
 							key={partner.alt}
-							className="flex h-16 w-40 items-center justify-center"
+							className="flex h-13 w-40 items-center justify-center"
 						>
 							<img
 								src={partner.src}

@@ -14,7 +14,7 @@ const COLUMNS = [
 	},
 	{
 		title: "Company",
-		links: ["About Us", "Our Team", "Case Studies", "Blog & Insights", "Industries", "Careers"],
+		links: ["About Us", "Our Team", "Case Studies", "Blog & Insights", "Careers"],
 	},
 	{
 		title: "Connect",
@@ -41,7 +41,7 @@ const SOCIALS = [
 	},
 ];
 
-const PARTNERS = ["Microsoft Partner", "AWS Partner", "Google Partner", "ISO 27001", "SOC 2"];
+const PARTNERS = ["Microsoft Partner", "AWS Partner", "Google Partner"];
 
 export function Footer() {
 	return (
@@ -49,7 +49,7 @@ export function Footer() {
 			<div className="mx-auto max-w-[1400px] px-5 py-10">
 				<div className="grid gap-10 md:grid-cols-[1.4fr_1fr_1fr_1fr]">
 					<div>
-						<Logo className="h-12" />
+						<Logo className="h-15" />
 						<p className="mt-5 max-w-xs text-sm leading-relaxed text-muted-foreground">
 							Driving innovation through expert IT solutions — cloud,
 							cybersecurity, automation, software development and staffing since
@@ -61,7 +61,7 @@ export function Footer() {
 									key={s.label}
 									href="#"
 									aria-label={s.label}
-									className="flex size-9 items-center justify-center rounded-lg border border-black/10 text-muted-foreground transition-colors hover:border-brand-green hover:bg-brand-green hover:text-white"
+									className="flex size-9 items-center justify-center rounded-lg border border-black/10 text-muted-foreground transition-colors hover:border-brand-blue hover:bg-blue-700 hover:text-white"
 								>
 									<svg viewBox="0 0 24 24" className="size-4" fill="currentColor" aria-hidden="true">
 										<path d={s.path} />
