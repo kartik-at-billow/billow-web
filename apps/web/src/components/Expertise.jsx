@@ -1,56 +1,94 @@
-import { useState } from "react";
-import { AnimatePresence, motion } from "framer-motion";
-import { ArrowRight } from "lucide-react";
-import { cn } from "@Billow-web/ui/lib/utils";
+import { motion } from "framer-motion";
+import {
+	ArrowUpRight,
+	Cloud,
+	Code2,
+	LayoutGrid,
+	ShieldCheck,
+	Users,
+	Workflow,
+} from "lucide-react";
 
-const TABS = [
+const SERVICES = [
 	{
-		id: "cloud-consulting",
-		label: "Cloud Consulting",
+		icon: Cloud,
+		number: "01",
 		title: "Cloud Consulting",
-		body: "Cloud strategy, migration planning and multi-cloud architecture services that modernize your infrastructure seamlessly.",
+		description:
+			"Cloud strategy, migration planning and multi-cloud architecture services that modernize your infrastructure seamlessly.",
 	},
 	{
-		id: "cybersecurity",
-		label: "Cybersecurity",
+		icon: ShieldCheck,
+		number: "02",
 		title: "Cybersecurity",
-		body: "Zero-trust frameworks, penetration testing and compliance adherence to protect your most critical business assets.",
+		description:
+			"Zero-trust frameworks, penetration testing and compliance adherence to protect your most critical business assets.",
 	},
 	{
-		id: "business-automation",
-		label: "Business Automation",
+		icon: Workflow,
+		number: "03",
 		title: "Business Automation",
-		body: "Workflow automation, RPA and process optimization that eliminate inefficiencies and boost productivity at scale.",
+		description:
+			"Workflow automation, RPA and process optimization that eliminate inefficiencies and boost productivity at scale.",
 	},
 	{
-		id: "custom-software-dev",
-		label: "Custom Software Dev",
+		icon: Code2,
+		number: "04",
 		title: "Custom Software Dev",
-		body: "End-to-end software development lifecycle services from design to deployment and ongoing maintenance.",
+		description:
+			"End-to-end software development lifecycle services from design to deployment and ongoing maintenance.",
 	},
 	{
-		id: "modern-workplace",
-		label: "Modern Workplace",
+		icon: LayoutGrid,
+		number: "05",
 		title: "Modern Workplace",
-		body: "Microsoft 365, Teams, collaboration tools and digital workspace solutions for today's hybrid workforce.",
+		description:
+			"Microsoft 365, Teams, collaboration tools and digital workspace solutions for today's hybrid workforce.",
 	},
 	{
-		id: "it-staffing",
-		label: "IT Staffing",
+		icon: Users,
+		number: "06",
 		title: "IT Staffing",
-		body: "Expert talent placement, contract staffing and team augmentation to scale your capabilities on demand.",
+		description:
+			"Expert talent placement, contract staffing and team augmentation to scale your capabilities on demand.",
 	},
 ];
 
-export function Expertise() {
-	// `selected` is the pinned tab (set on click); `hovered` is a temporary
-	// preview (set on hover/focus). The panel shows the hovered tab while the
-	// cursor is over a tab, and reverts to the selected one once it leaves.
-	const [selected, setSelected] = useState("cloud-consulting");
-	const [hovered, setHovered] = useState(null);
-	const activeId = hovered ?? selected;
-	const current = TABS.find((t) => t.id === activeId) ?? TABS[0];
+function ServiceCard({ icon: Icon, number, title, description, index }) {
+	return (
+		<motion.a
+			href="#contact"
+			initial={{ opacity: 0, y: 24 }}
+			whileInView={{ opacity: 1, y: 0 }}
+			viewport={{ once: true, margin: "-60px" }}
+			transition={{ duration: 0.45, delay: index * 0.06 }}
+			className="group flex flex-col rounded-xl border border-black/10 bg-white p-7 transition-colors duration-300 hover:border-brand-navy hover:bg-brand-navy"
+		>
+			<div className="flex items-center justify-between">
+				<span className="flex size-12 items-center justify-center rounded-lg bg-brand-sky text-brand-navy transition-colors duration-300 group-hover:bg-white/10 group-hover:text-white">
+					<Icon className="size-6" />
+				</span>
+				<span className="font-display text-sm font-semibold text-muted-foreground transition-colors duration-300 group-hover:text-white/50">
+					{number}
+				</span>
+			</div>
 
+			<h3 className="mt-6 text-lg font-semibold text-neutral-900 transition-colors duration-300 group-hover:text-white">
+				{title}
+			</h3>
+			<p className="mt-3 text-sm leading-relaxed text-muted-foreground transition-colors duration-300 group-hover:text-white/75">
+				{description}
+			</p>
+
+			<span className="mt-6 inline-flex items-center gap-1 text-sm font-semibold text-brand-navy transition-colors duration-300 group-hover:text-white">
+				Learn more
+				<ArrowUpRight className="size-4" />
+			</span>
+		</motion.a>
+	);
+}
+
+export function Expertise() {
 	return (
 		<section id="expertise" className="py-12">
 			<div className="mx-auto max-w-[1400px] px-5">
@@ -65,67 +103,10 @@ export function Expertise() {
 					measurable growth and operational excellence.
 				</p>
 
-				<div className="mt-8 rounded-2xl bg-muted/40 p-4 ring-1 ring-black/5 sm:p-6">
-					{/* Tab bar */}
-					<div
-						className="flex flex-wrap gap-x-2 gap-y-1 border-b border-black/10"
-						onMouseLeave={() => setHovered(null)}
-					>
-						{TABS.map((tab) => {
-							const isActive = tab.id === activeId;
-							return (
-								<button
-									key={tab.id}
-									type="button"
-									onClick={() => setSelected(tab.id)}
-									onMouseEnter={() => setHovered(tab.id)}
-									onFocus={() => setHovered(tab.id)}
-									onBlur={() => setHovered(null)}
-									className={cn(
-										"relative -mb-px px-3 py-3 text-xs font-medium transition-colors sm:text-sm",
-										isActive
-											? "text-brand-navy"
-											: "text-muted-foreground hover:text-brand-navy",
-									)}
-								>
-									{tab.label}
-									{isActive && (
-										<motion.span
-											layoutId="expertise-underline"
-											className="absolute inset-x-1 -bottom-px h-0.5 rounded-full bg-brand-green"
-										/>
-									)}
-								</button>
-							);
-						})}
-					</div>
-
-					{/* Panel */}
-					<div className="flex min-h-[28rem] flex-col justify-center py-8">
-						<AnimatePresence mode="wait">
-							<motion.div
-								key={current.id}
-								initial={{ opacity: 0, y: 12 }}
-								animate={{ opacity: 1, y: 0 }}
-								exit={{ opacity: 0, y: -12 }}
-								transition={{ duration: 0.25 }}
-							>
-								<h3 className="text-2xl font-extrabold tracking-tight text-brand-navy sm:text-3xl">
-									{current.title}
-								</h3>
-								<p className="mt-4 max-w-xl text-sm leading-relaxed text-foreground/70">
-									{current.body}
-								</p>
-								<a
-									href="#contact"
-									className="mt-6 inline-flex items-center gap-1.5 text-sm font-semibold text-brand-green-dark transition-colors hover:text-brand-green"
-								>
-									Learn more about {current.label}
-									<ArrowRight className="size-4" />
-								</a>
-							</motion.div>
-						</AnimatePresence>
-					</div>
+				<div className="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
+					{SERVICES.map((service, i) => (
+						<ServiceCard key={service.title} {...service} index={i} />
+					))}
 				</div>
 			</div>
 		</section>
