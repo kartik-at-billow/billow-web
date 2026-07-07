@@ -8,6 +8,8 @@ import {
 } from "react-router";
 
 import "./index.css";
+import Header from "./components/Header.jsx";
+import Footer from "./components/Footer.jsx";
 
 export function Layout({ children }) {
 	return (
@@ -28,7 +30,13 @@ export function Layout({ children }) {
 }
 
 export default function App() {
-	return <Outlet />;
+	return (
+		<div id="top" className="min-h-screen bg-background">
+			<Header />
+			<Outlet />
+			<Footer />
+		</div>
+	);
 }
 
 export function ErrorBoundary({ error }) {
