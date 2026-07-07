@@ -1,6 +1,7 @@
 import { Navbar } from "@/components/Navbar";
 import { PageHeader } from "@/components/PageHeader";
 import { AboutStory } from "@/components/AboutStory";
+import { Stats } from "@/components/Stats";
 import { Partners } from "@/components/Partners";
 import { CtaBand } from "@/components/CtaBand";
 import { Footer } from "@/components/Footer";
@@ -16,6 +17,7 @@ export default function About() {
 					subtitle="A technology partner built by engineers who have spent their careers solving exactly these problems."
 				/>
 				<AboutStory />
+				<Stats />
 				<Partners />
 				<CtaBand
 					title="Want to Work With Us?"
