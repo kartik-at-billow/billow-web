@@ -5,12 +5,8 @@ import { Expertise } from "@/components/Expertise";
 import { Stats } from "@/components/Stats";
 import { WhyBillow } from "@/components/WhyBillow";
 import { CaseStudies } from "@/components/CaseStudies";
-import { ContactForm } from "@/components/ContactForm";
-import { FAQ } from "@/components/FAQ";
-import { Partners } from "@/components/Partners";
+import { CtaBand } from "@/components/CtaBand";
 import { Footer } from "@/components/Footer";
-
-
 
 export default function Home() {
 	return (
@@ -20,12 +16,10 @@ export default function Home() {
 				<Hero />
 				<Expertise />
 				<Stats />
-				<WhyBillow />
 				<Clients />
-				<CaseStudies />
-				<ContactForm />
-				<FAQ />
-				<Partners />
+				<WhyBillow />
+				<CaseStudies limit={2} showViewAll />
+				<CtaBand />
 			</main>
 			<Footer />
 		</div>

@@ -1,13 +1,14 @@
 import { useEffect, useState } from "react";
 import { Mail, Menu, X, ArrowRight } from "lucide-react";
+import { Link } from "react-router";
 import { cn } from "@Billow-web/ui/lib/utils";
 import { Logo } from "@/components/Logo";
 
 const NAV_LINKS = [
-	{ label: "Home", href: "#top" },
-	{ label: "Services", href: "#expertise" },
-	{ label: "Working", href: "#why-billow" },
-	{ label: "About Us", href: "#case-studies" },
+	{ label: "Home", href: "/" },
+	{ label: "Services", href: "/services" },
+	{ label: "Work", href: "/work" },
+	{ label: "About", href: "/about" },
 ];
 
 export function Navbar() {
@@ -35,25 +36,24 @@ export function Navbar() {
 
 				<div className="hidden items-center gap-8 md:flex">
 					{NAV_LINKS.map((link) => (
-						<a
+						<Link
 							key={link.label}
-							href={link.href}
+							to={link.href}
 							className="text-sm font-medium text-foreground/70 transition-colors hover:text-brand-navy"
 						>
 							{link.label}
-						</a>
+						</Link>
 					))}
 				</div>
 
 				<div className="hidden md:block">
-					<a
-						href="#contact"
+					<Link
+						to="/contact"
 						className="inline-flex items-center gap-2 bg-black px-5 py-2.5 text-sm font-semibold text-white transition-transform hover:-translate-y-0.5 hover:bg-black/85"
 					>
 						Get in Touch
 						<ArrowRight className="size-4" />
-
-					</a>
+					</Link>
 				</div>
 
 				<button
@@ -70,23 +70,23 @@ export function Navbar() {
 				<div className="border-t border-black/5 bg-white px-5 py-4 md:hidden">
 					<div className="flex flex-col gap-1">
 						{NAV_LINKS.map((link) => (
-							<a
+							<Link
 								key={link.label}
-								href={link.href}
+								to={link.href}
 								onClick={() => setOpen(false)}
 								className="rounded-lg px-3 py-2.5 text-sm font-medium text-foreground/80 hover:bg-muted"
 							>
 								{link.label}
-							</a>
+							</Link>
 						))}
-						<a
-							href="#contact"
+						<Link
+							to="/contact"
 							onClick={() => setOpen(false)}
 							className="mt-2 inline-flex items-center justify-center gap-2 rounded-lg bg-black px-5 py-3 text-sm font-semibold text-white"
 						>
 							<Mail className="size-4" />
 							Get in Touch
-						</a>
+						</Link>
 					</div>
 				</div>
 			)}

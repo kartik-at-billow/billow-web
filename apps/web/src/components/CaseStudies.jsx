@@ -1,3 +1,6 @@
+import { ArrowRight } from "lucide-react";
+import { Link } from "react-router";
+
 const CASES = [
 	{
 		badge: "Cloud",
@@ -31,7 +34,9 @@ const CASES = [
 	},
 ];
 
-export function CaseStudies() {
+export function CaseStudies({ limit, showViewAll = false }) {
+	const cases = limit ? CASES.slice(0, limit) : CASES;
+
 	return (
 		<section id="case-studies" className="bg-muted/40 py-16">
 			<div className="mx-auto max-w-[1400px] px-5">
@@ -51,7 +56,7 @@ export function CaseStudies() {
 				    The extra bottom padding on each wrapper gives scroll room between
 				    transitions. Reverses automatically on scroll-up. */}
 				<div className="mt-12">
-					{CASES.map((study, i) => (
+					{cases.map((study, i) => (
 						<div
 							key={study.title}
 							className="sticky pb-8"
@@ -92,6 +97,18 @@ export function CaseStudies() {
 						</div>
 					))}
 				</div>
+
+				{showViewAll && (
+					<div className="mt-6 flex justify-center">
+						<Link
+							to="/work"
+							className="inline-flex items-center gap-2 border border-black/15 bg-white px-8 py-3.5 text-sm font-semibold text-neutral-800 transition-colors hover:bg-muted"
+						>
+							View All Case Studies
+							<ArrowRight className="size-4" />
+						</Link>
+					</div>
+				)}
 			</div>
 		</section>
 	);

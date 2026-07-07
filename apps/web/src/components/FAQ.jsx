@@ -39,7 +39,7 @@ function FaqItem({ item, isOpen, onToggle }) {
 				<ChevronDown
 					className={cn(
 						"size-5 shrink-0 text-muted-foreground transition-transform duration-300",
-						isOpen && "rotate-180 text-brand-blue",
+						isOpen && "rotate-180 text-brand-navy",
 					)}
 				/>
 			</button>

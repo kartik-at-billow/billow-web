@@ -1,24 +1,34 @@
+import { Link } from "react-router";
 import { Logo } from "@/components/Logo";
 
 const COLUMNS = [
 	{
 		title: "Services",
 		links: [
-			"Cloud Consulting",
-			"Cybersecurity",
-			"Business Automation",
-			"Custom Software Dev",
-			"Modern Workplace",
-			"IT Staffing",
+			{ label: "Cloud Consulting", href: "/services" },
+			{ label: "Cybersecurity", href: "/services" },
+			{ label: "Business Automation", href: "/services" },
+			{ label: "Custom Software Dev", href: "/services" },
+			{ label: "Modern Workplace", href: "/services" },
+			{ label: "IT Staffing", href: "/services" },
 		],
 	},
 	{
 		title: "Company",
-		links: ["About Us", "Our Team", "Case Studies", "Blog & Insights", "Careers"],
+		links: [
+			{ label: "About Us", href: "/about" },
+			{ label: "Case Studies", href: "/work" },
+			{ label: "Our Team", href: "#" },
+			{ label: "Blog & Insights", href: "#" },
+			{ label: "Careers", href: "#" },
+		],
 	},
 	{
 		title: "Connect",
-		links: ["Contact Us", "Get a Quote"],
+		links: [
+			{ label: "Contact Us", href: "/contact" },
+			{ label: "Get a Quote", href: "/contact" },
+		],
 	},
 ];
 
@@ -61,7 +71,7 @@ export function Footer() {
 									key={s.label}
 									href="#"
 									aria-label={s.label}
-									className="flex size-9 items-center justify-center rounded-lg border border-black/10 text-muted-foreground transition-colors hover:border-brand-blue hover:bg-blue-700 hover:text-white"
+									className="flex size-9 items-center justify-center rounded-lg border border-black/10 text-muted-foreground transition-colors hover:border-brand-navy hover:bg-brand-navy hover:text-white"
 								>
 									<svg viewBox="0 0 24 24" className="size-4" fill="currentColor" aria-hidden="true">
 										<path d={s.path} />
@@ -78,13 +88,13 @@ export function Footer() {
 							</h4>
 							<ul className="mt-4 space-y-3">
 								{col.links.map((link) => (
-									<li key={link}>
-										<a
-											href="#"
+									<li key={link.label}>
+										<Link
+											to={link.href}
 											className="text-sm text-muted-foreground transition-colors hover:text-brand-navy"
 										>
-											{link}
-										</a>
+											{link.label}
+										</Link>
 									</li>
 								))}
 							</ul>

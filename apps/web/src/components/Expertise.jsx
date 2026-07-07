@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import {
+	ArrowRight,
 	ArrowUpRight,
 	Cloud,
 	Code2,
@@ -8,6 +9,7 @@ import {
 	Users,
 	Workflow,
 } from "lucide-react";
+import { Link } from "react-router";
 
 const SERVICES = [
 	{
@@ -57,7 +59,7 @@ const SERVICES = [
 function ServiceCard({ icon: Icon, number, title, description, index }) {
 	return (
 		<motion.a
-			href="#contact"
+			href="/contact"
 			initial={{ opacity: 0, y: 24 }}
 			whileInView={{ opacity: 1, y: 0 }}
 			viewport={{ once: true, margin: "-60px" }}
@@ -88,7 +90,9 @@ function ServiceCard({ icon: Icon, number, title, description, index }) {
 	);
 }
 
-export function Expertise() {
+export function Expertise({ limit, showViewAll = false }) {
+	const services = limit ? SERVICES.slice(0, limit) : SERVICES;
+
 	return (
 		<section id="expertise" className="py-12">
 			<div className="mx-auto max-w-[1400px] px-5">
@@ -104,10 +108,22 @@ export function Expertise() {
 				</p>
 
 				<div className="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
-					{SERVICES.map((service, i) => (
+					{services.map((service, i) => (
 						<ServiceCard key={service.title} {...service} index={i} />
 					))}
 				</div>
+
+				{showViewAll && (
+					<div className="mt-10 flex justify-center">
+						<Link
+							to="/services"
+							className="inline-flex items-center gap-2 border border-black/15 bg-white px-8 py-3.5 text-sm font-semibold text-neutral-800 transition-colors hover:bg-muted"
+						>
+							View All Services
+							<ArrowRight className="size-4" />
+						</Link>
+					</div>
+				)}
 			</div>
 		</section>
 	);
