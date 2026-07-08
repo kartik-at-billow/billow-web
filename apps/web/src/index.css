@@ -20,5 +20,25 @@ html {
 }
 
 body {
-	background-color: #ffffff;
+	background-color: #eff6ff;
+}
+
+/* faint graph-paper grid, used on the home page background only */
+.bg-grid-blue {
+	background-image:
+		linear-gradient(to right, rgba(219, 234, 254, 0.9) 1px, transparent 1px),
+		linear-gradient(to bottom, rgba(219, 234, 254, 0.9) 1px, transparent 1px);
+	background-size: 72px 72px;
+}
+
+/* same grid, layered directly on top of hero's own gradient since a plain
+   bg-gradient-to-b utility class would otherwise overwrite it (both set
+   background-image). grid lines use a deeper blue so they stay visible
+   against every stop of the gradient underneath. */
+.bg-grid-hero {
+	background-image:
+		linear-gradient(to right, rgba(59, 130, 246, 0.4) 1px, transparent 1px),
+		linear-gradient(to bottom, rgba(59, 130, 246, 0.4) 1px, transparent 1px),
+		linear-gradient(to bottom, #bfdbfe, #eff6ff, #eff6ff);
+	background-size: 72px 72px, 72px 72px, 100% 100%;
 }

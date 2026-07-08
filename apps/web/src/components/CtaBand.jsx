@@ -7,7 +7,7 @@ export function CtaBand({
 	subtitle = "Tell us about your project and our team will get back to you within one business day.",
 }) {
 	return (
-		<section className="bg-white py-16">
+		<section className="bg-blue-50 py-16">
 			<div className="mx-auto max-w-2xl px-5 text-center">
 				<h2 className="text-3xl font-extrabold tracking-tight text-neutral-900 sm:text-4xl">
 					{title}

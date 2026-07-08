@@ -26,7 +26,7 @@ const STEPS = [
 
 export function WhyBillow() {
 	return (
-		<section id="why-billow" className="relative bg-white">
+		<section id="why-billow" className="relative bg-blue-50">
 			<div className="bg-brand-navy pb-14 pt-20">
 				<div className="mx-auto max-w-[1400px] px-5">
 					<h2 className="text-3xl font-extrabold tracking-tight text-white sm:text-4xl">

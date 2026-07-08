@@ -84,7 +84,7 @@ export function Hero() {
   id="top"
   onMouseEnter={() => setPaused(true)}
   onMouseLeave={() => setPaused(false)}
-  className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden bg-gradient-to-b from-blue-100 via-blue-50 to-white pt-16 pb-12"
+  className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden bg-grid-hero pt-16 pb-12"
 >
 			<div className="mx-auto max-w-4xl px-5 text-center">
 				{/* Rotating content — fixed min-height keeps the CTA row from jumping */}

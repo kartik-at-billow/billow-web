@@ -49,7 +49,7 @@ export function Stats() {
 	const inView = useInView(ref, { once: true, margin: "-80px" });
 
 	return (
-		<section className="border-y border-black/5 bg-white py-10">
+		<section className="border-y border-black/5 bg-blue-50 py-10">
 			<motion.div
 				ref={ref}
 				initial={{ opacity: 0 }}

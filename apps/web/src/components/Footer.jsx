@@ -55,7 +55,7 @@ const PARTNERS = ["Microsoft Partner", "AWS Partner", "Google Partner"];
 
 export function Footer() {
 	return (
-		<footer id="site-footer" className="border-t border-black/5 bg-white">
+		<footer id="site-footer" className="border-t border-black/5 bg-blue-50">
 			<div className="mx-auto max-w-[1400px] px-5 py-10">
 				<div className="grid gap-10 md:grid-cols-[1.4fr_1fr_1fr_1fr]">
 					<div>

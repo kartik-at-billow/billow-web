@@ -11,7 +11,7 @@ import { Footer } from "@/components/Footer";
 
 export default function Home() {
 	return (
-		<div className="min-h-screen bg-white text-foreground antialiased">
+		<div className="min-h-screen bg-blue-50 bg-grid-blue text-foreground antialiased">
 			<Navbar />
 			<main>
 				<Hero />
