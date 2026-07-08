@@ -6,7 +6,7 @@ import { Footer } from "@/components/Footer";
 
 export default function Services() {
 	return (
-		<div className="min-h-screen bg-white text-foreground antialiased">
+		<div className="min-h-screen bg-blue-50 text-foreground antialiased">
 			<Navbar />
 			<main className="pt-24">
 				<Expertise />

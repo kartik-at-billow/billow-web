@@ -44,13 +44,9 @@ const CLIENTS = [
   },
 ];
 
-function ClientCard({ client, borderRight, borderBottom }) {
+function ClientCard({ client }) {
   return (
-    <div
-      className={`group relative flex h-36 items-center justify-center overflow-hidden bg-white transition-all duration-300 ${
-        borderRight ? "border-r border-neutral-200" : ""
-      } ${borderBottom ? "border-b border-neutral-200" : ""}`}
-    >
+    <div className="group relative flex h-36 items-center justify-center overflow-hidden bg-blue-50 transition-all duration-300">
       {/* Logo */}
       <img
         src={client.src}
@@ -82,27 +78,17 @@ export function Clients() {
 
         <div className="mt-10">
           {/* Top 6 Clients */}
-          <div className="grid grid-cols-1 border border-neutral-200 md:grid-cols-2 lg:grid-cols-3">
-            {topClients.map((client, index) => (
-              <ClientCard
-                key={client.alt}
-                client={client}
-                borderRight={index % 3 !== 2}
-                borderBottom={index < 3}
-              />
+          <div className="grid grid-cols-1 gap-px border border-neutral-300 bg-neutral-300 md:grid-cols-2 lg:grid-cols-3">
+            {topClients.map((client) => (
+              <ClientCard key={client.alt} client={client} />
             ))}
           </div>
 
           {/* Bottom 2 Clients */}
           <div className="flex justify-center">
-            <div className="grid w-full md:w-2/3 grid-cols-1 md:grid-cols-2 border-x border-b border-neutral-200">
-              {bottomClients.map((client, index) => (
-                <ClientCard
-                  key={client.alt}
-                  client={client}
-                  borderRight={index === 0}
-                  borderBottom={false}
-                />
+            <div className="grid w-full grid-cols-1 gap-px border-x border-b border-neutral-300 bg-neutral-300 md:w-2/3 md:grid-cols-2">
+              {bottomClients.map((client) => (
+                <ClientCard key={client.alt} client={client} />
               ))}
             </div>
           </div>

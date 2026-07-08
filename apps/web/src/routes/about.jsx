@@ -8,7 +8,7 @@ import { Footer } from "@/components/Footer";
 
 export default function About() {
 	return (
-		<div className="min-h-screen bg-white text-foreground antialiased">
+		<div className="min-h-screen bg-blue-50 text-foreground antialiased">
 			<Navbar />
 			<main>
 				<PageHeader

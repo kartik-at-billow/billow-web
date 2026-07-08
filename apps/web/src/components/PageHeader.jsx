@@ -3,7 +3,7 @@ const HEIGHT = "pt-40 pb-16";
 // simple intro banner for non-home pages, sits under the fixed navbar
 export function PageHeader({ eyebrow, title, subtitle }) {
 	return (
-		<section className={`bg-gradient-to-b from-brand-navy/10 via-brand-navy/5 to-white ${HEIGHT}`}>
+		<section className={`bg-gradient-to-b from-brand-navy/10 via-brand-navy/5 to-blue-50 ${HEIGHT}`}>
 			<div className="mx-auto max-w-4xl px-5 text-center">
 				<p className="text-xs font-bold uppercase tracking-[0.2em] text-brand-navy">
 					{eyebrow}

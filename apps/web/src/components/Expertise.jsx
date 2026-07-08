@@ -64,7 +64,7 @@ function ServiceCard({ icon: Icon, number, title, description, index }) {
 			whileInView={{ opacity: 1, y: 0 }}
 			viewport={{ once: true, margin: "-60px" }}
 			transition={{ duration: 0.45, delay: index * 0.06 }}
-			className="group flex flex-col rounded-xl border border-black/10 bg-white p-7 transition-colors duration-300 hover:border-brand-navy hover:bg-brand-navy"
+			className="group flex flex-col rounded-xl border border-neutral-300 bg-blue-50 p-7 transition-colors duration-300 hover:border-brand-navy hover:bg-brand-navy"
 		>
 			<div className="flex items-center justify-between">
 				<span className="flex size-12 items-center justify-center rounded-lg bg-brand-sky text-brand-navy transition-colors duration-300 group-hover:bg-white/10 group-hover:text-white">

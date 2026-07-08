@@ -20,5 +20,45 @@ html {
 }
 
 body {
-	background-color: #ffffff;
+	background-color: #eff6ff;
+}
+
+/* faint graph-paper grid, used on the home page background only. lives on a
+   dedicated absolutely-positioned overlay (see _index.jsx) rather than on
+   the page wrapper directly, since a mask-image on the wrapper itself would
+   also fade out the actual page content, not just the grid. fade distances
+   are in viewport-height units rather than percentages, so the schedule
+   (fully visible through hero + services, minimal by the customers section)
+   stays fixed no matter how much content exists further down the page. */
+.bg-grid-blue {
+	background-image:
+		linear-gradient(to right, rgba(219, 234, 254, 0.9) 1px, transparent 1px),
+		linear-gradient(to bottom, rgba(219, 234, 254, 0.9) 1px, transparent 1px);
+	background-size: 72px 72px;
+	mask-image: linear-gradient(to bottom, black, black 100vh, transparent 190vh);
+	-webkit-mask-image: linear-gradient(to bottom, black, black 100vh, transparent 190vh);
+}
+
+/* hero grid, as two stacked overlay layers (not combined with the hero's own
+   background) so it can be styled independently. a single repeating
+   background-image can't shift its own hue by position, so the blue-200 to
+   blue-100 gradient is faked with two colored copies of the same grid, each
+   masked to fade in opposite directions: blue-200 dominates near the top,
+   blue-100 takes over by the bottom. */
+.bg-grid-hero-overlay-top {
+	background-image:
+		linear-gradient(to right, #bfdbfe 1px, transparent .5px),
+		linear-gradient(to bottom, #bfdbfe 1px, transparent .5px);
+	background-size: 72px 72px;
+	mask-image: linear-gradient(to bottom, black, transparent);
+	-webkit-mask-image: linear-gradient(to bottom, black, transparent);
+}
+
+.bg-grid-hero-overlay-bottom {
+	background-image:
+		linear-gradient(to right, #dbeafe 1px, transparent .5px),
+		linear-gradient(to bottom, #dbeafe 1px, transparent .5px);
+	background-size: 72px 72px;
+	mask-image: linear-gradient(to bottom, transparent, black);
+	-webkit-mask-image: linear-gradient(to bottom, transparent, black);
 }

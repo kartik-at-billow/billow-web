@@ -84,8 +84,10 @@ export function Hero() {
   id="top"
   onMouseEnter={() => setPaused(true)}
   onMouseLeave={() => setPaused(false)}
-  className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden bg-gradient-to-b from-blue-100 via-blue-50 to-white pt-16 pb-12"
+  className="relative z-0 flex min-h-screen flex-col items-center justify-center overflow-hidden bg-gradient-to-b from-blue-200 to-blue-50 pt-16 pb-12"
 >
+			<div aria-hidden="true" className="pointer-events-none absolute inset-0 -z-10 bg-grid-hero-overlay-top" />
+			<div aria-hidden="true" className="pointer-events-none absolute inset-0 -z-10 bg-grid-hero-overlay-bottom" />
 			<div className="mx-auto max-w-4xl px-5 text-center">
 				{/* Rotating content — fixed min-height keeps the CTA row from jumping */}
 				<div className="flex min-h-[20rem] flex-col justify-center sm:min-h-[24rem]">

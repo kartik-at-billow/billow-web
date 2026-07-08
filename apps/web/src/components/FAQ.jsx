@@ -63,7 +63,7 @@ export function FAQ() {
 	const [open, setOpen] = useState(0);
 
 	return (
-		<section id="faq" className="bg-white py-14">
+		<section id="faq" className="bg-blue-50 py-14">
 			<div className="mx-auto max-w-3xl px-5">
 				<h2 className="mt-2 text-center text-3xl font-extrabold tracking-tight text-brand-navy sm:text-4xl">
 					Frequently Asked Questions
