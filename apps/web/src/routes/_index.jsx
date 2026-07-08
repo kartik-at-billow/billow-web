@@ -11,12 +11,13 @@ import { Footer } from "@/components/Footer";
 
 export default function Home() {
 	return (
-		<div className="min-h-screen bg-blue-50 bg-grid-blue text-foreground antialiased">
+		<div className="relative z-0 min-h-screen bg-blue-50 text-foreground antialiased">
+			<div aria-hidden="true" className="pointer-events-none absolute inset-0 -z-10 bg-grid-blue" />
 			<Navbar />
 			<main>
 				<Hero />
 				<Expertise />
-				<Stats />
+				<Stats bordered={false} />
 				<Clients />
 				<WhyBillow />
 				<CaseStudies limit={2} showViewAll />
