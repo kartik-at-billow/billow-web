@@ -4,6 +4,7 @@ import { Clients } from "@/components/Clients";
 import { Expertise } from "@/components/Expertise";
 import { Stats } from "@/components/Stats";
 import { WhyBillow } from "@/components/WhyBillow";
+import { Testimonials } from "@/components/Testimonials";
 import { CaseStudies } from "@/components/CaseStudies";
 import { CtaBand } from "@/components/CtaBand";
 import { Partners } from "@/components/Partners";
@@ -20,6 +21,7 @@ export default function Home() {
 				<Stats />
 				<Clients />
 				<WhyBillow />
+				<Testimonials />
 				<CaseStudies limit={2} showViewAll />
 				<Partners />
 				<CtaBand />
