@@ -29,9 +29,18 @@ export function WhyBillow() {
 		<section id="why-billow" className="relative bg-blue-50">
 			<div className="bg-brand-navy pb-14 pt-20">
 				<div className="mx-auto max-w-[1400px] px-5">
-					<h2 className="text-3xl font-extrabold tracking-tight text-white sm:text-4xl">
-						Why Billow
-					</h2>
+					<div>
+						<p className="text-xs font-bold uppercase tracking-[0.2em] text-blue-200">
+							How We Work
+						</p>
+						<h2 className="mt-3 max-w-3xl text-3xl font-extrabold leading-[1.1] tracking-tight text-white sm:text-4xl md:text-5xl">
+							A four-step process, <span className="italic text-blue-300">tuned</span> <br /> by every engagement.
+						</h2>
+						<p className="mt-4 max-w-xl text-sm text-white/60 sm:text-base">
+							No mystery, no theatre. The same four movements, adapted in
+							weight to what your project actually needs.
+						</p>
+					</div>
 
 					<div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
 						{STEPS.map((step, i) => (

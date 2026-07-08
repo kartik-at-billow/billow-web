@@ -96,11 +96,22 @@ export function Expertise({ limit, showViewAll = false }) {
 	return (
 		<section id="expertise" className="py-12">
 			<div className="mx-auto max-w-[1400px] px-5">
-				<p className="text-xs font-bold uppercase tracking-[0.2em] text-brand-navy">
-					What We Do
-				</p>
+				<div className="flex flex-wrap items-end justify-between gap-4">
+					<p className="text-xs font-bold uppercase tracking-[0.2em] text-brand-navy">
+						Capabilities
+					</p>
+					{showViewAll && (
+						<Link
+							to="/services"
+							className="group inline-flex items-center gap-1.5 text-sm font-semibold text-neutral-900 underline decoration-neutral-900/30 underline-offset-4 transition-colors hover:decoration-neutral-900"
+						>
+							All Services
+							<ArrowRight className="size-4 transition-transform duration-300 group-hover:translate-x-0.5" />
+						</Link>
+					)}
+				</div>
 				<h2 className="mt-3 max-w-3xl text-3xl font-extrabold leading-[1.1] tracking-tight text-neutral-900 sm:text-4xl md:text-5xl">
-					End-to-End IT Solutions Built for Your Business
+					Delivering excellence <span className="italic text-brand-navy">across every surface</span> of your product.
 				</h2>
 				<p className="mt-4 max-w-xl text-sm text-muted-foreground sm:text-base">
 					From cloud migrations to cybersecurity tailored solutions that drive
@@ -112,18 +123,6 @@ export function Expertise({ limit, showViewAll = false }) {
 						<ServiceCard key={service.title} {...service} index={i} />
 					))}
 				</div>
-
-				{showViewAll && (
-					<div className="mt-10 flex justify-center">
-						<Link
-							to="/services"
-							className="inline-flex items-center gap-2 border border-black/15 bg-white px-8 py-3.5 text-sm font-semibold text-neutral-800 transition-colors hover:bg-muted"
-						>
-							View All Services
-							<ArrowRight className="size-4" />
-						</Link>
-					</div>
-				)}
 			</div>
 		</section>
 	);

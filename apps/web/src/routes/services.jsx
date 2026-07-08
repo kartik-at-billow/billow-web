@@ -11,10 +11,7 @@ export default function Services() {
 			<main className="pt-24">
 				<Expertise />
 				<Stats />
-				<CtaBand
-					title="Ready to Discuss Your Project?"
-					subtitle="Tell us which service fits your needs and we'll map out next steps together."
-				/>
+				<CtaBand title="Not sure which service fits? Let's talk it through." />
 			</main>
 			<Footer />
 		</div>
