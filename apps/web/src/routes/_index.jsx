@@ -17,12 +17,13 @@ export default function Home() {
 			<main>
 				<Hero />
 				<Expertise />
-				<Stats bordered={false} />
+				<Stats />
 				<Clients />
 				<WhyBillow />
 				<CaseStudies limit={2} showViewAll />
-				<CtaBand />
 				<Partners />
+				<CtaBand />
+				
 			</main>
 			<Footer />
 		</div>

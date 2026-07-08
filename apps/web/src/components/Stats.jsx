@@ -1,6 +1,5 @@
 import { useEffect, useRef, useState } from "react";
 import { motion, useInView } from "framer-motion";
-import { cn } from "@Billow-web/ui/lib/utils";
 
 const STATS = [
 	{ value: 500, suffix: "+", label: "Projects Delivered" },
@@ -45,12 +44,12 @@ function Stat({ stat, active }) {
 	);
 }
 
-export function Stats({ bordered = true }) {
+export function Stats() {
 	const ref = useRef(null);
 	const inView = useInView(ref, { once: true, margin: "-80px" });
 
 	return (
-		<section className={cn("bg-blue-50 py-10", bordered && "border-y border-black/5")}>
+		<section className="border-y border-neutral-300 bg-blue-50 py-10">
 			<motion.div
 				ref={ref}
 				initial={{ opacity: 0 }}
