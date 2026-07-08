@@ -31,14 +31,26 @@ body {
 	background-size: 72px 72px;
 }
 
-/* same grid, layered directly on top of hero's own gradient since a plain
-   bg-gradient-to-b utility class would otherwise overwrite it (both set
-   background-image). grid lines use a deeper blue so they stay visible
-   against every stop of the gradient underneath. */
-.bg-grid-hero {
+/* hero grid, as two stacked overlay layers (not combined with the hero's own
+   background) so it can be styled independently. a single repeating
+   background-image can't shift its own hue by position, so the blue-200 to
+   blue-100 gradient is faked with two colored copies of the same grid, each
+   masked to fade in opposite directions: blue-200 dominates near the top,
+   blue-100 takes over by the bottom. */
+.bg-grid-hero-overlay-top {
 	background-image:
-		linear-gradient(to right, rgba(59, 130, 246, 0.4) 1px, transparent 1px),
-		linear-gradient(to bottom, rgba(59, 130, 246, 0.4) 1px, transparent 1px),
-		linear-gradient(to bottom, #bfdbfe, #eff6ff, #eff6ff);
-	background-size: 72px 72px, 72px 72px, 100% 100%;
+		linear-gradient(to right, #bfdbfe 1px, transparent .5px),
+		linear-gradient(to bottom, #bfdbfe 1px, transparent .5px);
+	background-size: 72px 72px;
+	mask-image: linear-gradient(to bottom, black, transparent);
+	-webkit-mask-image: linear-gradient(to bottom, black, transparent);
+}
+
+.bg-grid-hero-overlay-bottom {
+	background-image:
+		linear-gradient(to right, #dbeafe 1px, transparent .5px),
+		linear-gradient(to bottom, #dbeafe 1px, transparent .5px);
+	background-size: 72px 72px;
+	mask-image: linear-gradient(to bottom, transparent, black);
+	-webkit-mask-image: linear-gradient(to bottom, transparent, black);
 }
