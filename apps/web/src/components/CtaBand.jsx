@@ -1,24 +1,21 @@
-import { ArrowRight } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import { Link } from "react-router";
 
-// slim closing strip used at the end of every page to funnel toward /contact
-export function CtaBand({
-	title = "Let's Build Something Great Together",
-	subtitle = "Tell us about your project and our team will get back to you within one business day.",
-}) {
+// closing strip used at the end of every page, sitting directly above the
+// footer (also bg-blue-50) so the two read as one continuous block
+export function CtaBand({ title = "Have a project in mind? Let's build it together." }) {
 	return (
-		<section className="bg-blue-50 py-16">
-			<div className="mx-auto max-w-2xl px-5 text-center">
-				<h2 className="text-3xl font-extrabold tracking-tight text-neutral-900 sm:text-4xl">
+		<section className="bg-blue-50 py-20">
+			<div className="mx-auto flex max-w-[1400px] flex-col items-start justify-between gap-8 px-5 sm:flex-row sm:items-center">
+				<h2 className="max-w-2xl text-3xl font-extrabold tracking-tight text-neutral-900 sm:text-4xl">
 					{title}
 				</h2>
-				<p className="mt-4 text-sm text-muted-foreground sm:text-base">{subtitle}</p>
 				<Link
 					to="/contact"
-					className="mt-8 inline-flex items-center gap-2 bg-black px-8 py-3.5 text-sm font-semibold text-white shadow-lg shadow-black/10 transition-transform hover:-translate-y-0.5"
+					className="inline-flex shrink-0 items-center gap-2 bg-black px-8 py-3.5 text-sm font-semibold text-white shadow-lg shadow-black/10 transition-transform hover:-translate-y-0.5"
 				>
-					Get in Touch
-					<ArrowRight className="size-4" />
+					Start a project
+					<ArrowUpRight className="size-4" />
 				</Link>
 			</div>
 		</section>

@@ -11,10 +11,7 @@ export default function Work() {
 			<main className="pt-24">
 				<CaseStudies />
 				<Clients />
-				<CtaBand
-					title="Have a Project in Mind?"
-					subtitle="Let's talk about how we can deliver similar results for your business."
-				/>
+				<CtaBand title="Your project belongs in this list. Let's start." />
 			</main>
 			<Footer />
 		</div>

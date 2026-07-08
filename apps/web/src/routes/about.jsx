@@ -19,10 +19,7 @@ export default function About() {
 				<AboutStory />
 				<Stats />
 				<Partners />
-				<CtaBand
-					title="Want to Work With Us?"
-					subtitle="Tell us about your project and let's see if we're a good fit."
-				/>
+				<CtaBand title="Interested in working with us? Let's have a proper conversation." />
 			</main>
 			<Footer />
 		</div>
