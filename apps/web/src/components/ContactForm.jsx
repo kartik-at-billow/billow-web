@@ -28,20 +28,7 @@ export function ContactForm() {
 	return (
 		<section id="contact" className="scroll-mt-20 bg-blue-50 py-16">
 			<div className="mx-auto max-w-[1400px] px-5">
-				<div className="mx-auto max-w-2xl text-center">
-					<p className="text-xs font-bold uppercase tracking-[0.2em] text-brand-navy">
-						Get in Touch
-					</p>
-					<h2 className="mt-3 font-mono text-3xl font-extrabold tracking-tight text-neutral-900 sm:text-4xl">
-						Let's Build Something Great Together
-					</h2>
-					<p className="mt-4 text-sm text-muted-foreground sm:text-base">
-						Tell us about your project and our team will get back to you within
-						one business day.
-					</p>
-				</div>
-
-				<div className="mx-auto mt-10 grid max-w-6xl gap-6 lg:grid-cols-3">
+				<div className="mx-auto grid max-w-6xl gap-6 lg:grid-cols-3">
 					{/* Form */}
 					<div className="rounded-2xl border border-black/10 bg-muted/30 p-6 ring-1 ring-black/5 sm:p-8 lg:col-span-2">
 						{submitted ? (

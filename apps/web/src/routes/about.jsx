@@ -1,5 +1,5 @@
 import { Navbar } from "@/components/Navbar";
-import { PageHeader } from "@/components/PageHeader";
+import { SectionIntro } from "@/components/SectionIntro";
 import { AboutStory } from "@/components/AboutStory";
 import { Stats } from "@/components/Stats";
 import { Partners } from "@/components/Partners";
@@ -10,11 +10,15 @@ export default function About() {
 	return (
 		<div className="min-h-screen bg-blue-50 text-foreground antialiased">
 			<Navbar />
-			<main>
-				<PageHeader
+			<main className="pt-24">
+				<SectionIntro
 					eyebrow="About Billow"
-					title="Committed to Your Success"
-					subtitle="A technology partner built by engineers who have spent their careers solving exactly these problems."
+					headline={
+						<>
+							Committed to <span className="italic text-brand-navy">your success.</span>
+						</>
+					}
+					description="A technology partner built by engineers who have spent their careers solving exactly these problems."
 				/>
 				<AboutStory />
 				<Stats />

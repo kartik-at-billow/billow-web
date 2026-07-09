@@ -2,6 +2,7 @@ import { useMemo, useState } from "react";
 import { ArrowRight, ArrowUpRight } from "lucide-react";
 import { Link } from "react-router";
 import { CASE_STUDIES, INDUSTRIES, SERVICES } from "@/lib/caseStudies";
+import { SectionIntro } from "@/components/SectionIntro";
 
 function FilterGroup({ label, options, active, onChange }) {
 	return (
@@ -64,7 +65,12 @@ function CaseCard({ slug, title, client, year, industry, service, description, i
 	);
 }
 
-export function CaseStudies({ limit, showViewAll = false, showFilters = false }) {
+export function CaseStudies({
+	limit,
+	showViewAll = false,
+	showFilters = false,
+	headingLevel = "h2",
+}) {
 	const [industry, setIndustry] = useState("All");
 	const [service, setService] = useState("All");
 
@@ -81,49 +87,40 @@ export function CaseStudies({ limit, showViewAll = false, showFilters = false })
 	const cases = limit ? CASE_STUDIES.slice(0, limit) : filtered;
 
 	return (
-		<section id="case-studies" className="py-12">
-			<div className="mx-auto max-w-[1400px] mt-30">
-				<div className="grid gap-6 lg:grid-cols-[1.6fr_1fr] lg:items-end">
-					<div>
-						<p className="text-xs font-bold uppercase tracking-[0.2em] text-brand-navy">
-							Selected Work · Since 2014
-						</p>
-						<h2 className="mt-3 max-w-3xl text-3xl font-extrabold leading-[1.1] tracking-tight text-neutral-900 sm:text-4xl md:text-5xl">
-							A curated record of what we've{" "}
-							<span className="italic text-brand-navy">delivered.</span>
-						</h2>
-					</div>
-					<p className="text-sm text-muted-foreground sm:text-base">
-						Filter by industry or service to see engagements closest to your
-						own. Every project shown was built by the same team you'd work
-						with.
-					</p>
-				</div>
-			</div>
+		<section id="case-studies">
+			<SectionIntro
+				as={headingLevel}
+				eyebrow="Selected Work · Since 2014"
+				headline={
+					<>
+						A curated record of what we've{" "}
+						<span className="italic text-brand-navy">delivered.</span>
+					</>
+				}
+				description="Filter by industry or service to see engagements closest to your own. Every project shown was built by the same team you'd work with."
+				showDivider={showFilters}
+			/>
 
 			{showFilters && (
-				<>
-					<div className="my-30 border-t border-neutral-300" />
-					<div className="mx-auto mt-8 flex max-w-[1400px] flex-col gap-4 border-y border-neutral-300 px-5 py-8 lg:flex-row lg:items-center lg:justify-between">
-						<div className="flex flex-col gap-3 lg:flex-row lg:items-center lg:gap-6">
-							<FilterGroup
-								label="Industry"
-								options={INDUSTRIES}
-								active={industry}
-								onChange={setIndustry}
-							/>
-							<FilterGroup
-								label="Service"
-								options={SERVICES}
-								active={service}
-								onChange={setService}
-							/>
-						</div>
-						<span className="shrink-0 text-xs font-semibold uppercase tracking-widest text-muted-foreground">
-							{filtered.length} {filtered.length === 1 ? "Project" : "Projects"}
-						</span>
+				<div className="mx-auto mt-8 flex max-w-[1400px] flex-col gap-4 border-y border-neutral-300 px-5 py-8 lg:flex-row lg:items-center lg:justify-between">
+					<div className="flex flex-col gap-3 lg:flex-row lg:items-center lg:gap-6">
+						<FilterGroup
+							label="Industry"
+							options={INDUSTRIES}
+							active={industry}
+							onChange={setIndustry}
+						/>
+						<FilterGroup
+							label="Service"
+							options={SERVICES}
+							active={service}
+							onChange={setService}
+						/>
 					</div>
-				</>
+					<span className="shrink-0 text-xs font-semibold uppercase tracking-widest text-muted-foreground">
+						{filtered.length} {filtered.length === 1 ? "Project" : "Projects"}
+					</span>
+				</div>
 			)}
 
 			<div className="mx-auto max-w-[1400px] px-5">

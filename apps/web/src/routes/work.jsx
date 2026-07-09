@@ -9,7 +9,7 @@ export default function Work() {
 		<div className="min-h-screen bg-blue-50 text-foreground antialiased">
 			<Navbar />
 			<main className="pt-24">
-				<CaseStudies showFilters />
+				<CaseStudies showFilters headingLevel="h1" />
 				<Clients />
 				<CtaBand title="Your project belongs in this list. Let's start." />
 			</main>

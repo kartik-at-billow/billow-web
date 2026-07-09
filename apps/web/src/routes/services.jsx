@@ -9,7 +9,7 @@ export default function Services() {
 		<div className="min-h-screen bg-blue-50 text-foreground antialiased">
 			<Navbar />
 			<main className="pt-24">
-				<Expertise />
+				<Expertise headingLevel="h1" />
 				<Stats />
 				<CtaBand title="Not sure which service fits? Let's talk it through." />
 			</main>
