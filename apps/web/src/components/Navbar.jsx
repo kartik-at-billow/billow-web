@@ -1,11 +1,10 @@
 import { useEffect, useState } from "react";
 import { Mail, Menu, X, ArrowRight } from "lucide-react";
-import { Link } from "react-router";
+import { Link, useLocation } from "react-router";
 import { cn } from "@Billow-web/ui/lib/utils";
 import { Logo } from "@/components/Logo";
 
 const NAV_LINKS = [
-	{ label: "Home", href: "/" },
 	{ label: "Services", href: "/services" },
 	{ label: "Work", href: "/work" },
 	{ label: "About", href: "/about" },
@@ -15,6 +14,8 @@ const NAV_LINKS = [
 export function Navbar() {
 	const [scrolled, setScrolled] = useState(false);
 	const [open, setOpen] = useState(false);
+
+	const location = useLocation();
 
 	useEffect(() => {
 		const onScroll = () => setScrolled(window.scrollY > 12);
@@ -40,7 +41,12 @@ export function Navbar() {
 						<Link
 							key={link.label}
 							to={link.href}
-							className="text-sm font-medium text-foreground/70 transition-colors hover:text-brand-navy"
+							className={cn(
+								"border-b-2 py-2 text-sm font-medium transition-colors",
+								location.pathname === link.href
+									? "border-blue-600 text-brand-navy"
+									: "border-transparent text-foreground/70 hover:text-brand-navy",
+							)}
 						>
 							{link.label}
 						</Link>

@@ -53,7 +53,7 @@ const TESTIMONIALS = [
 function TestimonialCard({ quote, name, title, company }) {
 	const initial = name.charAt(0);
 	return (
-		<div className="flex h-full min-h-[22rem] flex-col rounded-xl border border-neutral-300 bg-blue-50 p-8">
+		<div className="flex h-full min-h-[18rem] flex-col rounded-xl border border-neutral-0 bg-blue-50 p-6">
 			<Quote className="size-9 text-brand-navy/25" strokeWidth={1.5} />
 			<p className="mt-6 flex-1 text-base leading-relaxed text-neutral-900">
 				{quote}
