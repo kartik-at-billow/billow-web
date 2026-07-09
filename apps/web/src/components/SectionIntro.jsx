@@ -14,7 +14,7 @@ export function SectionIntro({
 }) {
 	return (
 		<>
-			<div className="mx-auto mt-30 max-w-[1400px] px-5">
+			<div className="mx-auto mt-50 max-w-[1400px] px-5">
 				<div className="grid gap-6 lg:grid-cols-[1.6fr_1fr] lg:items-end">
 					<div>
 						<div className="flex flex-wrap items-end justify-between gap-4">

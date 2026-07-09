@@ -26,7 +26,7 @@ export function ContactForm() {
 	}
 
 	return (
-		<section id="contact" className="scroll-mt-20 bg-blue-50 py-16">
+		<section id="contact" className="scroll-mt-20 bg-blue-50 py-12">
 			<div className="mx-auto max-w-[1400px] px-5">
 				<div className="mx-auto grid max-w-6xl gap-6 lg:grid-cols-3">
 					{/* Form */}
