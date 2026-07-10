@@ -29,7 +29,7 @@ export function Navbar() {
 			className={cn(
 				"fixed inset-x-0 top-0 z-50 transition-all duration-300",
 				scrolled
-					? "border-b border-black/5 bg-white/85 backdrop-blur-md"
+					? "border-b border-black/5 bg-white/65 backdrop-blur-md"
 					: "border-b border-transparent bg-transparent",
 			)}
 		>
@@ -44,7 +44,7 @@ export function Navbar() {
 							className={cn(
 								"border-b-2 py-2 text-sm font-medium transition-colors",
 								location.pathname === link.href
-									? "border-blue-600 text-brand-navy"
+									? "border-brand-navy text-brand-navy"
 									: "border-transparent text-foreground/70 hover:text-brand-navy",
 							)}
 						>

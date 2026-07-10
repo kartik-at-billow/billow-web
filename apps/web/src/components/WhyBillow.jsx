@@ -50,13 +50,13 @@ export function WhyBillow() {
 								whileInView={{ opacity: 1, y: 0 }}
 								viewport={{ once: true, margin: "-60px" }}
 								transition={{ duration: 0.45, delay: i * 0.08 }}
-								className="group flex flex-col justify-between rounded-xl border border-white/10 bg-white/[0.04] p-6 transition-colors hover:border-brand-green/40 hover:bg-white/[0.07]"
+								className="group flex flex-col justify-between rounded-xl border border-white/10 bg-white/[0.04] p-6 transition-colors hover:border-brand-sky/40 hover:bg-white/[0.07]"
 							>
 								<div>
 									<h3 className="text-base font-semibold text-white">{step.title}</h3>
 									<p className="mt-3 text-sm leading-relaxed text-white/60">{step.body}</p>
 								</div>
-								<div className="mt-8 flex size-12 items-center justify-center rounded-lg bg-white/5 text-brand-green ring-1 ring-white/10 transition-colors group-hover:bg-brand-green group-hover:text-white">
+								<div className="mt-8 flex size-12 items-center justify-center rounded-lg bg-white/5 text-brand-sky ring-1 ring-white/10 transition-colors duration-300 group-hover:bg-brand-sky group-hover:text-brand-navy">
 									<step.icon className="size-6" />
 								</div>
 							</motion.div>

@@ -187,7 +187,7 @@ export function ContactForm() {
 									<div className="mt-2 pt-6">
 										<button
 											type="submit"
-											className="inline-flex items-center justify-center gap-2 bg-black px-8 py-3.5 text-sm font-semibold text-white shadow-lg shadow-black/10 transition-transform hover:-translate-y-0.5"
+											className="inline-flex items-center justify-center gap-2 bg-black px-8 py-3.5 text-sm font-semibold text-white  transition-transform hover:-translate-y-0.5"
 										>
 											Send Inquiry
 											<ArrowUpRight className="size-4" />
@@ -211,7 +211,7 @@ export function ContactForm() {
 						</p>
 
 						<div className="mt-8 flex flex-col gap-4">
-							<div className="rounded-xl border border-neutral-300 p-6">
+							<div className="rounded-xl bg-muted/30 border border-neutral-300 p-6">
 								<MapPin className="size-5 text-neutral-900" />
 								<p className="mt-4 text-[11px] font-semibold uppercase tracking-widest text-muted-foreground">
 									Office
