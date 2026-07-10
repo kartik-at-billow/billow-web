@@ -15,42 +15,36 @@ import { SectionIntro } from "@/components/SectionIntro";
 const SERVICES = [
 	{
 		icon: Cloud,
-		number: "01",
 		title: "Cloud Consulting",
 		description:
 			"Cloud strategy, migration planning and multi-cloud architecture services that modernize your infrastructure seamlessly.",
 	},
 	{
 		icon: ShieldCheck,
-		number: "02",
 		title: "Cybersecurity",
 		description:
 			"Zero-trust frameworks, penetration testing and compliance adherence to protect your most critical business assets.",
 	},
 	{
 		icon: Workflow,
-		number: "03",
 		title: "Business Automation",
 		description:
 			"Workflow automation, RPA and process optimization that eliminate inefficiencies and boost productivity at scale.",
 	},
 	{
 		icon: Code2,
-		number: "04",
 		title: "Custom Software Dev",
 		description:
 			"End-to-end software development lifecycle services from design to deployment and ongoing maintenance.",
 	},
 	{
 		icon: LayoutGrid,
-		number: "05",
 		title: "Modern Workplace",
 		description:
 			"Microsoft 365, Teams, collaboration tools and digital workspace solutions for today's hybrid workforce.",
 	},
 	{
 		icon: Users,
-		number: "06",
 		title: "IT Staffing",
 		description:
 			"Expert talent placement, contract staffing and team augmentation to scale your capabilities on demand.",

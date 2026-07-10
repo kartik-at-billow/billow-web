@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Compass, PenTool, Rocket, LifeBuoy } from "lucide-react";
+import { Compass, PenTool, Rocket, LifeBuoy, HandHelping } from "lucide-react";
 
 const STEPS = [
 	{
@@ -18,7 +18,7 @@ const STEPS = [
 		body: "Agile implementation with weekly check-ins, live demos, and transparent progress reporting throughout.",
 	},
 	{
-		icon: LifeBuoy,
+		icon: HandHelping,
 		title: "Support and Grow",
 		body: "Ongoing managed support, training, and optimization to maximize long-term business value after launch.",
 	},

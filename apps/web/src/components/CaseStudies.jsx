@@ -131,7 +131,7 @@ export function CaseStudies({
 				</div>
 
 				{showViewAll && (
-					<div className="mt-10 flex justify-center">
+					<div className="mt-10 mb-10 flex justify-center">
 						<Link
 							to="/work"
 							className="inline-flex items-center gap-2 border border-black/15 bg-white px-8 py-3.5 text-sm font-semibold text-neutral-800 transition-colors hover:bg-muted"

@@ -50,7 +50,7 @@ export function AboutStory() {
 					{VALUES.map((value) => (
 						<div
 							key={value.title}
-							className="flex gap-4 rounded-xl border border-black/10 bg-white p-6"
+							className="flex gap-4 rounded-xl border border-black/10  p-6"
 						>
 							<span className="flex size-11 shrink-0 items-center justify-center rounded-lg bg-brand-sky text-brand-navy">
 								<value.icon className="size-5" />
