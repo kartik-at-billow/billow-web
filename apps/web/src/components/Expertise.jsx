@@ -10,6 +10,7 @@ import {
 	Workflow,
 } from "lucide-react";
 import { Link } from "react-router";
+import { SectionIntro } from "@/components/SectionIntro";
 
 const SERVICES = [
 	{
@@ -90,17 +91,16 @@ function ServiceCard({ icon: Icon, number, title, description, index }) {
 	);
 }
 
-export function Expertise({ limit, showViewAll = false }) {
+export function Expertise({ limit, showViewAll = false, headingLevel = "h2" }) {
 	const services = limit ? SERVICES.slice(0, limit) : SERVICES;
 
 	return (
-		<section id="expertise" className="py-12">
-			<div className="mx-auto max-w-[1400px] px-5">
-				<div className="flex flex-wrap items-end justify-between gap-4">
-					<p className="text-xs font-bold uppercase tracking-[0.2em] text-brand-navy">
-						Capabilities
-					</p>
-					{showViewAll && (
+		<section id="expertise">
+			<SectionIntro
+				as={headingLevel}
+				eyebrow="Services / Capabilities"
+				eyebrowAction={
+					showViewAll && (
 						<Link
 							to="/services"
 							className="group inline-flex items-center gap-1.5 text-sm font-semibold text-neutral-900 underline decoration-neutral-900/30 underline-offset-4 transition-colors hover:decoration-neutral-900"
@@ -108,17 +108,19 @@ export function Expertise({ limit, showViewAll = false }) {
 							All Services
 							<ArrowRight className="size-4 transition-transform duration-300 group-hover:translate-x-0.5" />
 						</Link>
-					)}
-				</div>
-				<h2 className="mt-3 max-w-3xl text-3xl font-extrabold leading-[1.1] tracking-tight text-neutral-900 sm:text-4xl md:text-5xl">
-					Delivering excellence <span className="italic text-brand-navy">across every surface</span> of your product.
-				</h2>
-				<p className="mt-4 max-w-xl text-sm text-muted-foreground sm:text-base">
-					From cloud migrations to cybersecurity tailored solutions that drive
-					measurable growth and operational excellence.
-				</p>
+					)
+				}
+				headline={
+					<>
+						Delivering excellence <span className="italic text-brand-navy">across every surface</span> of your product.
+					</>
+				}
+				description="From cloud migrations to cybersecurity tailored solutions that drive measurable growth and operational excellence."
+				showDivider={!limit}
+			/>
 
-				<div className="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
+			<div className="mx-auto max-w-[1400px] px-5">
+				<div className={`grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3 ${limit ? "mt-10" : "mt-16"}`}>
 					{services.map((service, i) => (
 						<ServiceCard key={service.title} {...service} index={i} />
 					))}

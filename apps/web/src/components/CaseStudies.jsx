@@ -1,105 +1,137 @@
-import { ArrowRight } from "lucide-react";
+import { useMemo, useState } from "react";
+import { ArrowRight, ArrowUpRight } from "lucide-react";
 import { Link } from "react-router";
+import { CASE_STUDIES, INDUSTRIES, SERVICES } from "@/lib/caseStudies";
+import { SectionIntro } from "@/components/SectionIntro";
 
-const CASES = [
-	{
-		badge: "Cloud",
-		category: "Financial Services",
-		title: "Full Azure Cloud Migration for Regional Credit Union",
-		metrics: [
-			{ value: "40%", label: "Cost reduction" },
-			{ value: "60d", label: "Delivery" },
-			{ value: "99.9%", label: "Uptime" },
-		],
-	},
-	{
-		badge: "Security",
-		category: "Public Sector",
-		title: "CMMC Level 2 Compliance for Government Contractor",
-		metrics: [
-			{ value: "100%", label: "Compliance" },
-			{ value: "3mo", label: "Delivery" },
-			{ value: "Zero", label: "Incidents" },
-		],
-	},
-	{
-		badge: "Automation",
-		category: "Manufacturing",
-		title: "RPA Automation Eliminates 320 Monthly Manual Hours",
-		metrics: [
-			{ value: "320h", label: "Saved/mo" },
-			{ value: "6wk", label: "ROI hit" },
-			{ value: "98%", label: "Accuracy" },
-		],
-	},
-];
+function FilterGroup({ label, options, active, onChange }) {
+	return (
+		<div className="flex flex-wrap items-center gap-2">
+			<span className="mr-1 text-xs font-bold uppercase tracking-widest text-muted-foreground">
+				{label}
+			</span>
+			{options.map((option) => (
+				<button
+					key={option}
+					type="button"
+					onClick={() => onChange(option)}
+					className={`rounded-full border px-4 py-1.5 text-sm font-medium transition-colors ${
+						active === option
+							? "border-neutral-900 bg-neutral-900 text-white"
+							: "border-neutral-300 bg-blue-50 text-neutral-800 hover:border-neutral-900"
+					}`}
+				>
+					{option}
+				</button>
+			))}
+		</div>
+	);
+}
 
-export function CaseStudies({ limit, showViewAll = false }) {
-	const cases = limit ? CASES.slice(0, limit) : CASES;
+function CaseCard({ slug, title, client, year, industry, service, description, image }) {
+	return (
+		<Link to={`/work/${slug}`} className="group block">
+			<div className="aspect-[4/3] w-full overflow-hidden rounded-xl border border-neutral-300 bg-neutral-200">
+				<img
+					src={image}
+					alt=""
+					loading="lazy"
+					className="size-full object-cover transition-transform duration-500 group-hover:scale-105"
+				/>
+			</div>
+
+			<div className="mt-4 flex items-center justify-between gap-3">
+				<p className="text-xs font-bold uppercase tracking-widest text-muted-foreground">
+					{client} · {year}
+				</p>
+				<ArrowUpRight className="size-4 shrink-0 text-neutral-400 transition-colors group-hover:text-brand-navy" />
+			</div>
+			<h3 className="mt-2 text-lg font-semibold leading-snug text-neutral-900 transition-colors group-hover:text-brand-navy">
+				{title}
+			</h3>
+			<p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+				{description}
+			</p>
+
+			<div className="mt-3 flex flex-wrap gap-2">
+				<span className="rounded-full border border-neutral-300 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wide text-neutral-600">
+					{industry}
+				</span>
+				<span className="rounded-full border border-neutral-300 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wide text-neutral-600">
+					{service}
+				</span>
+			</div>
+		</Link>
+	);
+}
+
+export function CaseStudies({
+	limit,
+	showViewAll = false,
+	showFilters = false,
+	headingLevel = "h2",
+}) {
+	const [industry, setIndustry] = useState("All");
+	const [service, setService] = useState("All");
+
+	const filtered = useMemo(
+		() =>
+			CASE_STUDIES.filter(
+				(c) =>
+					(industry === "All" || c.industry === industry) &&
+					(service === "All" || c.service === service),
+			),
+		[industry, service],
+	);
+
+	const cases = limit ? CASE_STUDIES.slice(0, limit) : filtered;
 
 	return (
-		<section id="case-studies" className="bg-muted/40 py-16">
+		<section id="case-studies">
+			<SectionIntro
+				as={headingLevel}
+				eyebrow="Selected Work · Since 2014"
+				headline={
+					<>
+						A curated record of what we've{" "}
+						<span className="italic text-brand-navy">delivered.</span>
+					</>
+				}
+				description="Filter by industry or service to see engagements closest to your own. Every project shown was built by the same team you'd work with."
+				showDivider={showFilters}
+			/>
+
+			{showFilters && (
+				<div className="mx-auto mt-8 flex max-w-[1400px] flex-col gap-4 border-y border-neutral-300 px-5 py-8 lg:flex-row lg:items-center lg:justify-between">
+					<div className="flex flex-col gap-3 lg:flex-row lg:items-center lg:gap-6">
+						<FilterGroup
+							label="Industry"
+							options={INDUSTRIES}
+							active={industry}
+							onChange={setIndustry}
+						/>
+						<FilterGroup
+							label="Service"
+							options={SERVICES}
+							active={service}
+							onChange={setService}
+						/>
+					</div>
+					<span className="shrink-0 text-xs font-semibold uppercase tracking-widest text-muted-foreground">
+						{filtered.length} {filtered.length === 1 ? "Project" : "Projects"}
+					</span>
+				</div>
+			)}
+
 			<div className="mx-auto max-w-[1400px] px-5">
-				<p className="text-xs font-bold uppercase tracking-[0.2em] text-brand-navy">
-					Case Studies
-				</p>
-				<h2 className="mt-3 max-w-3xl text-3xl font-extrabold tracking-tight text-neutral-900 sm:text-4xl md:text-5xl">
-					Real Projects. Real Results.
-				</h2>
-				<p className="mt-4 max-w-xl text-sm text-muted-foreground sm:text-base">
-					See how we have transformed businesses across industries with
-					measurable, documented outcomes.
-				</p>
-
-				{/* Scroll-stacking cards: each card is sticky with an increasing top
-				    offset, so the next one slides up and stacks over the previous.
-				    The extra bottom padding on each wrapper gives scroll room between
-				    transitions. Reverses automatically on scroll-up. */}
-				<div className="mt-12">
-					{cases.map((study, i) => (
-						<div
-							key={study.title}
-							className="sticky pb-8"
-							style={{ top: `calc(6rem + ${i * 1.75}rem)` }}
-						>
-							<article className="mx-auto flex min-h-[19rem] max-w-4xl flex-col justify-between overflow-hidden rounded-3xl border border-black/10 bg-white shadow-2xl shadow-black/10">
-								{/* neutral top accent — visible on the peeking edge when stacked */}
-								<span className="block h-2 w-full shrink-0 bg-brand-navy" />
-
-								<div className="flex flex-1 flex-col p-8 sm:p-10">
-									<div className="flex items-center gap-3">
-										<span className="rounded-full bg-brand-navy px-3 py-1 text-[11px] font-semibold uppercase tracking-wide text-white">
-											{study.badge}
-										</span>
-										<span className="text-xs font-bold uppercase tracking-widest text-brand-navy/60">
-											{study.category}
-										</span>
-									</div>
-
-									<h3 className="mt-5 max-w-2xl text-2xl font-extrabold leading-tight tracking-tight text-neutral-900 sm:text-3xl">
-										{study.title}
-									</h3>
-
-									<div className="mt-auto grid grid-cols-3 gap-4 border-t border-black/10 pt-6">
-										{study.metrics.map((m) => (
-											<div key={m.label}>
-												<div className="text-2xl font-extrabold tracking-tight text-brand-navy sm:text-3xl">
-													{m.value}
-												</div>
-												<div className="mt-1 text-[11px] uppercase tracking-wide text-muted-foreground">
-													{m.label}
-												</div>
-											</div>
-										))}
-									</div>
-								</div>
-							</article>
-						</div>
+				<div className="mt-16 grid grid-cols-1 gap-x-6 gap-y-12 sm:grid-cols-2">
+					{cases.map((study) => (
+						<CaseCard key={study.slug} {...study} />
 					))}
 				</div>
 
 				{showViewAll && (
-					<div className="mt-6 flex justify-center">
+					<div className="mt-10 flex justify-center">
 						<Link
 							to="/work"
 							className="inline-flex items-center gap-2 border border-black/15 bg-white px-8 py-3.5 text-sm font-semibold text-neutral-800 transition-colors hover:bg-muted"

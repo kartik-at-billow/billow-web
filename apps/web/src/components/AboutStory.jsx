@@ -21,7 +21,7 @@ const VALUES = [
 // placeholder company narrative — replace with real facts before launch
 export function AboutStory() {
 	return (
-		<section className="py-16">
+		<section className="py-12">
 			<div className="mx-auto grid max-w-[1400px] gap-12 px-5 lg:grid-cols-[1.1fr_1fr]">
 				<div>
 					<p className="text-xs font-bold uppercase tracking-[0.2em] text-brand-navy">
