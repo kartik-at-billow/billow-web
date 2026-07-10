@@ -32,12 +32,12 @@ export function Partners() {
           {PARTNERS.map((partner) => (
             <div
               key={partner.alt}
-              className="flex h-30 w-72 items-center justify-center bg-white p-8 shadow-lg transition-all duration-300"
+              className="flex h-25 w-65 items-center justify-center bg-white p-8 shadow-lg transition-all duration-300"
             >
               <img
                 src={partner.src}
                 alt={partner.alt}
-                className="max-h-15 object-contain"
+                className="max-h-12 object-contain"
               />
             </div>
           ))}

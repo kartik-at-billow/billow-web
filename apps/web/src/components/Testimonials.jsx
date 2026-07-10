@@ -125,7 +125,7 @@ export function Testimonials() {
 					onMouseLeave={() => setPaused(false)}
 				>
 					<div className="overflow-hidden" ref={emblaRef}>
-						<div className="-ml-5 flex">
+						<div className="-ml-1 flex">
 							{TESTIMONIALS.map((testimonial) => (
 								<div
 									key={testimonial.name}

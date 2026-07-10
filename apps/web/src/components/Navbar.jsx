@@ -1,11 +1,10 @@
 import { useEffect, useState } from "react";
-import { Mail, Menu, X, ArrowRight } from "lucide-react";
-import { Link } from "react-router";
+import { Mail, Menu, X, ArrowUpRight } from "lucide-react";
+import { Link, useLocation } from "react-router";
 import { cn } from "@Billow-web/ui/lib/utils";
 import { Logo } from "@/components/Logo";
 
 const NAV_LINKS = [
-	{ label: "Home", href: "/" },
 	{ label: "Services", href: "/services" },
 	{ label: "Work", href: "/work" },
 	{ label: "About", href: "/about" },
@@ -15,6 +14,8 @@ const NAV_LINKS = [
 export function Navbar() {
 	const [scrolled, setScrolled] = useState(false);
 	const [open, setOpen] = useState(false);
+
+	const location = useLocation();
 
 	useEffect(() => {
 		const onScroll = () => setScrolled(window.scrollY > 12);
@@ -28,7 +29,7 @@ export function Navbar() {
 			className={cn(
 				"fixed inset-x-0 top-0 z-50 transition-all duration-300",
 				scrolled
-					? "border-b border-black/5 bg-white/85 backdrop-blur-md"
+					? "border-b border-black/5 bg-white/65 backdrop-blur-md"
 					: "border-b border-transparent bg-transparent",
 			)}
 		>
@@ -40,7 +41,12 @@ export function Navbar() {
 						<Link
 							key={link.label}
 							to={link.href}
-							className="text-sm font-medium text-foreground/70 transition-colors hover:text-brand-navy"
+							className={cn(
+								"border-b-2 py-2 text-sm font-medium transition-colors",
+								location.pathname === link.href
+									? "border-brand-navy text-brand-navy"
+									: "border-transparent text-foreground/70 hover:text-brand-navy",
+							)}
 						>
 							{link.label}
 						</Link>
@@ -53,7 +59,7 @@ export function Navbar() {
 						className="inline-flex items-center gap-2 bg-black px-5 py-2.5 text-sm font-semibold text-white transition-transform hover:-translate-y-0.5 hover:bg-black/85"
 					>
 						Get in Touch
-						<ArrowRight className="size-4" />
+						<ArrowUpRight className="size-4" />
 					</Link>
 				</div>
 
@@ -68,7 +74,7 @@ export function Navbar() {
 			</nav>
 
 			{open && (
-				<div className="border-t border-black/5 bg-white px-5 py-4 md:hidden">
+				<div className="border-t border-black/5 px-5 py-4 md:hidden">
 					<div className="flex flex-col gap-1">
 						{NAV_LINKS.map((link) => (
 							<Link
@@ -83,10 +89,10 @@ export function Navbar() {
 						<Link
 							to="/contact"
 							onClick={() => setOpen(false)}
-							className="mt-2 inline-flex items-center justify-center gap-2 rounded-lg bg-black px-5 py-3 text-sm font-semibold text-white"
+							className="mt-2 inline-flex items-center justify-center gap-2 bg-black px-5 py-3 text-sm font-semibold text-white"
 						>
-							<Mail className="size-4" />
 							Get in Touch
+							<ArrowUpRight className="size-4" />
 						</Link>
 					</div>
 				</div>
