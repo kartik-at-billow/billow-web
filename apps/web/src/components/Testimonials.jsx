@@ -116,7 +116,7 @@ export function Testimonials() {
 					</div>
 				</div>
 				<h2 className="mt-3 max-w-3xl text-3xl font-extrabold leading-[1.1] tracking-tight text-neutral-900 sm:text-4xl md:text-5xl">
-					A studio our clients <span className="italic text-brand-navy">quietly recommend.</span>
+					A Partner our clients <span className="italic text-brand-navy">quietly recommend.</span>
 				</h2>
 
 				<div
