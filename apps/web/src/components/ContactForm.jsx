@@ -201,7 +201,7 @@ export function ContactForm() {
 					{/* Studio / contact info */}
 					<div>
 						<p className="text-xs font-bold uppercase tracking-[0.2em] text-brand-navy">
-							02 / Studio
+							02 / Contact
 						</p>
 						<h2 className="mt-3 text-3xl font-extrabold tracking-tight text-neutral-900 sm:text-4xl">
 							Or find us in person.
@@ -210,7 +210,7 @@ export function ContactForm() {
 							We typically respond within 24 business hours.
 						</p>
 
-						<div className="mt-8 flex flex-col gap-4">
+						<div className="mt-8 flex flex-col gap-4 ">
 							<div className="rounded-xl bg-muted/30 border border-neutral-300 p-6">
 								<MapPin className="size-5 text-neutral-900" />
 								<p className="mt-4 text-[11px] font-semibold uppercase tracking-widest text-muted-foreground">
@@ -221,7 +221,7 @@ export function ContactForm() {
 								</p>
 							</div>
 
-							<div className="rounded-xl border border-neutral-300 p-6">
+							<div className="rounded-xl border bg-muted/30 border-neutral-300 p-6">
 								<Mail className="size-5 text-neutral-900" />
 								<p className="mt-4 text-[11px] font-semibold uppercase tracking-widest text-muted-foreground">
 									Direct Email

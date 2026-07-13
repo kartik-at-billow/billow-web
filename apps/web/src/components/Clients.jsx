@@ -4,49 +4,71 @@ const CLIENTS = [
   {
     src: "/clients/caltranslogo.png",
     alt: "Caltrans",
-    description: "Delivered secure digital solutions supporting transportation operations.",
+    url: "https://dot.ca.gov",
+    description:
+      "Delivered secure digital solutions supporting transportation operations.",
   },
   {
     src: "/clients/DSH_header_logo.png",
     alt: "California Department of State Hospitals",
-    description: "Supported secure healthcare technology and operational modernization.",
+    url: "https://www.dsh.ca.gov",
+    description:
+      "Supported secure healthcare technology and operational modernization.",
   },
   {
     src: "/clients/calstrs_logo.avif",
     alt: "CalSTRS",
-    description: "Built reliable enterprise solutions for secure financial and member services.",
+    url: "https://www.calstrs.com",
+    description:
+      "Built reliable enterprise solutions for secure financial and member services.",
   },
   {
     src: "/clients/california_public_utilities.png",
     alt: "California Public Utilities Commission",
-    description: "Enabled efficient digital systems for regulatory and public service operations.",
+    url: "https://www.cpuc.ca.gov",
+    description:
+      "Enabled efficient digital systems for regulatory and public service operations.",
   },
   {
     src: "/clients/dmv_log.png",
     alt: "California DMV",
-    description: "Helped modernize citizen-facing digital services and internal workflows.",
+    url: "https://www.dmv.ca.gov",
+    description:
+      "Helped modernize citizen-facing digital services and internal workflows.",
   },
   {
     src: "/clients/shartsis_logo.svg",
     alt: "Shartsis",
-    description: "Developed secure, reliable technology solutions for legal operations.",
+    url: "https://www.sflaw.com/",
+    description:
+      "Developed secure, reliable technology solutions for legal operations.",
   },
   {
     src: "/clients/Xterra_Web-Logo_Horz-wht.svg",
     alt: "Xterra",
+    url: "https://xterracorp.com/",
     invert: true,
-    description: "Collaborated on enterprise cloud and technology transformation initiatives",
+    description:
+      "Collaborated on enterprise cloud and technology transformation initiatives.",
   },
   {
     src: "/clients/logo-biomarin.svg",
-    alt: "Biomarin",
-    description: "Supported scalable digital platforms for life sciences innovation.",
+    alt: "BioMarin",
+    url: "https://www.biomarin.com",
+    description:
+      "Supported scalable digital platforms for life sciences innovation.",
   },
 ];
 
 function ClientCard({ client }) {
   return (
-    <div className="group relative flex h-36 items-center justify-center overflow-hidden bg-blue-50 transition-all duration-300">
+    <a
+      href={client.url}
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label={`Visit ${client.alt} website`}
+      className="group relative flex h-36 items-center justify-center overflow-hidden bg-blue-50 transition-all duration-300 hover:z-10"
+    >
       {/* Logo */}
       <img
         src={client.src}
@@ -58,12 +80,12 @@ function ClientCard({ client }) {
       />
 
       {/* Hover Overlay */}
-      <div className="absolute inset-0 flex items-center justify-center bg-brand-navy px-8 text-center opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-        <p className="text-lg font-medium leading-relaxed text-white">
+      <div className="absolute inset-0 flex flex-col items-center justify-center bg-brand-navy px-6 text-center opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+        <p className="text-base font-medium leading-relaxed text-white">
           {client.description}
         </p>
       </div>
-    </div>
+    </a>
   );
 }
 

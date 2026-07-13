@@ -14,7 +14,7 @@ export function Partners() {
 
       <div className="relative mx-auto max-w-7xl px-6">
         <div className="mx-auto max-w-3xl text-center">
-          <span className="text-sm font-semibold uppercase tracking-[0.2em] text-primary-500">
+          <span className="text-md font-semibold uppercase tracking-[0.2em] text-primary-500">
             Our Partners
           </span>
 
