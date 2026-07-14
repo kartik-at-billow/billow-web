@@ -187,7 +187,7 @@ export function ContactForm() {
 									<div className="mt-2 pt-6">
 										<button
 											type="submit"
-											className="inline-flex items-center justify-center gap-2 bg-black px-8 py-3.5 text-sm font-semibold text-white  transition-transform hover:-translate-y-0.5"
+											className="inline-flex items-center justify-center gap-2 bg-black px-8 py-3.5 cursor-pointer text-sm font-semibold text-white  transition-transform hover:-translate-y-0.5"
 										>
 											Send Inquiry
 											<ArrowUpRight className="size-4" />
