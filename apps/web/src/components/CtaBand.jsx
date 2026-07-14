@@ -12,7 +12,7 @@ export function CtaBand({ title = "Have a project in mind? Let's build it togeth
 				</h2>
 				<Link
 					to="/contact"
-					className="inline-flex shrink-0 items-center gap-2 bg-black px-8 py-3.5 text-sm font-semibold text-white shadow-lg shadow-black/10 transition-transform hover:-translate-y-0.5"
+					className="inline-flex shrink-0 items-center gap-2 bg-black px-8 py-3.5 text-sm font-semibold text-white transition-transform hover:-translate-y-0.5"
 				>
 					Start a project
 					<ArrowUpRight className="size-4" />
