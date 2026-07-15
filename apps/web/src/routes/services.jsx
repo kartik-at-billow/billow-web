@@ -11,7 +11,10 @@ export default function Services() {
 			<main className="pt-24">
 				<Expertise headingLevel="h1" />
 				<Stats />
-				<CtaBand title="Not sure which service fits? Let's talk it through." />
+				<CtaBand 
+					title="Not sure which service fits? Let's talk it through." 
+					buttonText="Book a Call"
+				/>
 			</main>
 			<Footer />
 		</div>
