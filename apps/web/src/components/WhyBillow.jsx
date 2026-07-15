@@ -37,8 +37,7 @@ export function WhyBillow() {
 							A four-step process, <span className="italic text-blue-300">tuned</span> <br /> by every engagement.
 						</h2>
 						<p className="mt-4 max-w-xl text-sm text-white/60 sm:text-base">
-							No mystery, no theatre. The same four movements, adapted in
-							weight to what your project actually needs.
+							A structured four-phase methodology, customized to align with your project's specific objectives and requirements.
 						</p>
 					</div>
 
