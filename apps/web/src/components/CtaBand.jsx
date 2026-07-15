@@ -3,7 +3,10 @@ import { Link } from "react-router";
 
 // closing strip used at the end of every page, sitting directly above the
 // footer (also bg-blue-50) so the two read as one continuous block
-export function CtaBand({ title = "Have a project in mind? Let's build it together." }) {
+export function CtaBand({ 
+	title = "Have a project in mind? Let's build it together.", 
+	buttonText = "Start a Project"
+}) {
 	return (
 		<section className="bg-blue-50 py-20">
 			<div className="mx-auto flex max-w-[1400px] flex-col items-start justify-between gap-8 px-5 sm:flex-row sm:items-center">
@@ -14,7 +17,7 @@ export function CtaBand({ title = "Have a project in mind? Let's build it togeth
 					to="/contact"
 					className="inline-flex shrink-0 items-center gap-2 bg-black px-8 py-3.5 text-sm font-semibold text-white transition-transform hover:-translate-y-0.5"
 				>
-					Start a project
+					{buttonText}
 					<ArrowUpRight className="size-4" />
 				</Link>
 			</div>

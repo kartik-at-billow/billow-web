@@ -46,7 +46,7 @@ const CLIENTS = [
   {
     src: "/clients/Xterra_Web-Logo_Horz-wht.svg",
     alt: "Xterra",
-    url: "https://xterracorp.com/",
+    url: "",
     invert: true,
     description:
       "Collaborated on enterprise cloud and technology transformation initiatives.",

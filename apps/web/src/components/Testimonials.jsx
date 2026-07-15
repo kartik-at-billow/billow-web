@@ -59,7 +59,7 @@ function TestimonialCard({ quote, name, title, company }) {
 				{quote}
 			</p>
 			<div className="mt-8 flex items-center gap-3 border-t border-neutral-300 pt-6">
-				<span className="flex size-9 shrink-0 items-center justify-center rounded-md bg-neutral-900 text-sm font-semibold text-white">
+				<span className="flex size-9 shrink-0 items-center justify-center rounded-md bg-brand-navy text-sm font-semibold text-white">
 					{initial}
 				</span>
 				<div>
