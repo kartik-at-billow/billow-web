@@ -82,8 +82,8 @@ export function Hero() {
 	return (
 		<section
   id="top"
-  onMouseEnter={() => setPaused(true)}
-  onMouseLeave={() => setPaused(false)}
+//   onMouseEnter={() => setPaused(true)}
+//   onMouseLeave={() => setPaused(false)}
   className="relative z-0 flex min-h-screen flex-col items-center justify-center overflow-hidden bg-gradient-to-b from-blue-200 to-blue-50 pt-16 pb-12"
 >
 			<div aria-hidden="true" className="pointer-events-none absolute inset-0 -z-10 bg-grid-hero-overlay-top" />

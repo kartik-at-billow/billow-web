@@ -108,7 +108,7 @@ export function Footer() {
 				</div>
 
 				<div className="mt-12 flex flex-col items-center justify-between gap-6 border-t border-black/5 pt-6 sm:flex-row">
-					<p className="text-xs text-muted-foreground">
+					<p className="text-xs text-black">
 						© 2026 Billow LLC. All rights reserved.
 					</p>
 				</div>
