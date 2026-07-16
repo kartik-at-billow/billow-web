@@ -33,7 +33,7 @@ const SERVICES = [
 	},
 	{
 		icon: Code2,
-		title: "Custom Software Dev",
+		title: "Custom Software & AI/ML Solution",
 		description:
 			"End-to-end software development lifecycle services from design to deployment and ongoing maintenance.",
 	},
@@ -65,9 +65,7 @@ function ServiceCard({ icon: Icon, number, title, description, index }) {
 				<span className="flex size-12 items-center justify-center rounded-lg bg-brand-sky text-brand-navy transition-colors duration-300 group-hover:bg-white/10 group-hover:text-white">
 					<Icon className="size-6" />
 				</span>
-				<span className="font-display text-sm font-semibold text-muted-foreground transition-colors duration-300 group-hover:text-white/50">
-					{number}
-				</span>
+
 			</div>
 
 			<h3 className="mt-6 text-lg font-semibold text-neutral-900 transition-colors duration-300 group-hover:text-white">
