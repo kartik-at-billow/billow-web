@@ -10,22 +10,19 @@ import { cn } from "@Billow-web/ui/lib/utils";
  */
 const SLIDES = [
 	{
-		titleTop: "Driving Innovation",
-		titleRest: "Through Expert IT Solutions That Work.",
-		subtitle: (
-			<>
-				We empower organizations with{" "}
-				<strong className="font-semibold text-brand-navy">
-					cutting-edge cloud, cybersecurity, automation
-				</strong>{" "}
-				and software solutions backed by{" "}
-				<strong className="font-semibold text-brand-navy">
-					100+ expert consultants
-				</strong>{" "}
-				across 40+ technologies.
-			</>
-		),
-	},
+	titleTop: "Empowering Enterprises",
+	titleRest: "With AI-Driven Innovation.",
+	subtitle: (
+	<>
+		From intelligent automation to Generative AI, we build{" "}
+		<strong className="font-semibold text-brand-navy">
+			scalable AI & Machine Learning solutions
+		</strong>{" "}
+		that automate processes, unlock actionable insights, and accelerate
+		business growth.
+	</>
+),
+},
 	{
 		titleTop: "Protect What",
 		titleRest: "Matters Most With Zero-Trust Security.",
@@ -62,7 +59,7 @@ const SLIDES = [
 	},
 ];
 
-const AUTOPLAY_MS = 4000;
+const AUTOPLAY_MS = 4200;
 
 export function Hero() {
 	const [index, setIndex] = useState(0);
@@ -82,8 +79,6 @@ export function Hero() {
 	return (
 		<section
   id="top"
-//   onMouseEnter={() => setPaused(true)}
-//   onMouseLeave={() => setPaused(false)}
   className="relative z-0 flex min-h-screen flex-col items-center justify-center overflow-hidden bg-gradient-to-b from-blue-200 to-blue-50 pt-16 pb-12"
 >
 			<div aria-hidden="true" className="pointer-events-none absolute inset-0 -z-10 bg-grid-hero-overlay-top" />
