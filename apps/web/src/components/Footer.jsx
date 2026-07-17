@@ -1,6 +1,21 @@
+import { useEffect, useState } from "react";
 import { ArrowUpRight } from "lucide-react";
 import { Link } from "react-router";
 import { Logo } from "@/components/Logo";
+
+const OFFICE_TIME_ZONE = "America/Los_Angeles";
+
+// timeZoneName: "short" resolves to PST or PDT automatically depending on
+// daylight saving, rather than hardcoding a label that would be wrong half
+// the year
+function formatOfficeTime() {
+	return new Intl.DateTimeFormat("en-US", {
+		timeZone: OFFICE_TIME_ZONE,
+		hour: "numeric",
+		minute: "2-digit",
+		timeZoneName: "short",
+	}).format(new Date());
+}
 
 const NAV_COLUMN = {
 	title: "Company",
@@ -30,6 +45,13 @@ const CONTACT_INFO = [
 ];
 
 export function Footer() {
+	const [officeTime, setOfficeTime] = useState(formatOfficeTime);
+
+	useEffect(() => {
+		const id = setInterval(() => setOfficeTime(formatOfficeTime()), 30_000);
+		return () => clearInterval(id);
+	}, []);
+
 	return (
 		<footer id="site-footer" className="border-t border-black/5 bg-blue-50">
 			<div className="mx-auto max-w-[1400px] px-5 py-14">
@@ -104,6 +126,8 @@ export function Footer() {
 								)}
 							</div>
 						))}
+
+						<p className="mt-2 text-sm font-medium text-neutral-900">{officeTime}</p>
 					</div>
 				</div>
 

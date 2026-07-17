@@ -17,8 +17,9 @@ export const SERVICES = [
 	"IT Staffing",
 ];
 
-// placeholder photography (Lorem Picsum) and synthetic project details — swap
-// for real project imagery, clients and write-ups once available
+// placeholder photography (hand-picked, tech-relevant Unsplash photos) and
+// synthetic project details — swap for real project imagery, clients and
+// write-ups once available
 export const CASE_STUDIES = [
 	{
 		slug: "azure-migration-credit-union",
@@ -34,7 +35,7 @@ export const CASE_STUDIES = [
 			{ value: "60d", label: "Delivery" },
 			{ value: "99.9%", label: "Uptime" },
 		],
-		image: "https://picsum.photos/seed/billow-case-01/1200/900",
+		image: "https://images.unsplash.com/photo-1782094673136-5198a372980c?w=1200&h=900&fit=crop&q=80&auto=format",
 	},
 	{
 		slug: "cmmc-compliance-government-contractor",
@@ -50,7 +51,7 @@ export const CASE_STUDIES = [
 			{ value: "3mo", label: "Delivery" },
 			{ value: "Zero", label: "Incidents" },
 		],
-		image: "https://picsum.photos/seed/billow-case-02/1200/900",
+		image: "https://images.unsplash.com/photo-1614064641938-3bbee52942c7?w=1200&h=900&fit=crop&q=80&auto=format",
 	},
 	{
 		slug: "rpa-manufacturing-automation",
@@ -66,7 +67,7 @@ export const CASE_STUDIES = [
 			{ value: "6wk", label: "ROI hit" },
 			{ value: "98%", label: "Accuracy" },
 		],
-		image: "https://picsum.photos/seed/billow-case-03/1200/900",
+		image: "https://images.unsplash.com/photo-1716191299980-a6e8827ba10b?w=1200&h=900&fit=crop&q=80&auto=format",
 	},
 	{
 		slug: "citizen-services-portal-modernization",
@@ -82,7 +83,7 @@ export const CASE_STUDIES = [
 			{ value: "45d", label: "Delivery" },
 			{ value: "60%", label: "Fewer tickets" },
 		],
-		image: "https://picsum.photos/seed/billow-case-04/1200/900",
+		image: "https://images.unsplash.com/photo-1619410283995-43d9134e7656?w=1200&h=900&fit=crop&q=80&auto=format",
 	},
 	{
 		slug: "zero-trust-hospital-network",
@@ -98,7 +99,7 @@ export const CASE_STUDIES = [
 			{ value: "4mo", label: "Delivery" },
 			{ value: "Zero", label: "Breaches" },
 		],
-		image: "https://picsum.photos/seed/billow-case-05/1200/900",
+		image: "https://images.unsplash.com/photo-1744868562210-fffb7fa882d9?w=1200&h=900&fit=crop&q=80&auto=format",
 	},
 	{
 		slug: "case-management-law-firm",
@@ -114,7 +115,7 @@ export const CASE_STUDIES = [
 			{ value: "90d", label: "Delivery" },
 			{ value: "99.9%", label: "Uptime" },
 		],
-		image: "https://picsum.photos/seed/billow-case-06/1200/900",
+		image: "https://images.unsplash.com/photo-1763128516808-785e80c1dd68?w=1200&h=900&fit=crop&q=80&auto=format",
 	},
 	{
 		slug: "modern-workplace-pension-fund",
@@ -130,7 +131,7 @@ export const CASE_STUDIES = [
 			{ value: "60d", label: "Rollout" },
 			{ value: "35%", label: "Fewer tickets" },
 		],
-		image: "https://picsum.photos/seed/billow-case-07/1200/900",
+		image: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=1200&h=900&fit=crop&q=80&auto=format",
 	},
 	{
 		slug: "staffing-life-sciences-platform",
@@ -146,6 +147,6 @@ export const CASE_STUDIES = [
 			{ value: "2wk", label: "Ramp" },
 			{ value: "100%", label: "Retention" },
 		],
-		image: "https://picsum.photos/seed/billow-case-08/1200/900",
+		image: "https://images.unsplash.com/photo-1517048676732-d65bc937f952?w=1200&h=900&fit=crop&q=80&auto=format",
 	},
 ];

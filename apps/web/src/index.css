@@ -62,3 +62,19 @@ body {
 	mask-image: linear-gradient(to bottom, transparent, black);
 	-webkit-mask-image: linear-gradient(to bottom, transparent, black);
 }
+
+/* grid lines  */
+.bg-grid-corner-fade {
+	background-image:
+		linear-gradient(to right, #dbeafe 1px, transparent 1px),
+		linear-gradient(to bottom, #dbeafe 1px, transparent 1px);
+	background-size: 72px 72px;
+	mask-image:
+		radial-gradient(circle at top right, transparent 0%, black 25%, transparent 70%),
+		linear-gradient(to bottom, transparent, black 12%);
+	mask-composite: intersect;
+	-webkit-mask-image:
+		radial-gradient(circle at top right, transparent 0%, black 25%, transparent 70%),
+		linear-gradient(to bottom, transparent, black 12%);
+	-webkit-mask-composite: source-in;
+}
