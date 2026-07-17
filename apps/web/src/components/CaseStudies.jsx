@@ -17,8 +17,8 @@ function FilterGroup({ label, options, active, onChange }) {
 					onClick={() => onChange(option)}
 					className={`rounded-full border px-4 py-1.5 text-sm font-medium transition-colors ${
 						active === option
-							? "border-neutral-900 bg-neutral-900 text-white"
-							: "border-neutral-300 bg-blue-50 text-neutral-800 hover:border-neutral-900"
+							? "border-neutral-900 bg-neutral-900 text-white dark:border-white dark:bg-white dark:text-neutral-900"
+							: "border-neutral-300 bg-blue-50 text-neutral-800 hover:border-neutral-900 dark:border-neutral-700 dark:bg-brand-midnight dark:text-neutral-300 dark:hover:border-white"
 					}`}
 				>
 					{option}
@@ -31,7 +31,7 @@ function FilterGroup({ label, options, active, onChange }) {
 function CaseCard({ slug, title, client, year, industry, service, description, image }) {
 	return (
 		<Link to={`/work/${slug}`} className="group block">
-			<div className="aspect-[4/3] w-full overflow-hidden rounded-xl border border-neutral-300 bg-neutral-200">
+			<div className="aspect-[4/3] w-full overflow-hidden rounded-xl border border-neutral-300 bg-neutral-200 dark:border-white/10 dark:bg-neutral-800">
 				<img
 					src={image}
 					alt=""
@@ -46,7 +46,7 @@ function CaseCard({ slug, title, client, year, industry, service, description, i
 				</p>
 				<ArrowUpRight className="size-4 shrink-0 text-neutral-400 transition-colors group-hover:text-brand-navy" />
 			</div>
-			<h3 className="mt-2 text-lg font-semibold leading-snug text-neutral-900 transition-colors group-hover:text-brand-navy">
+			<h3 className="mt-2 text-lg font-semibold leading-snug text-neutral-900 transition-colors group-hover:text-brand-navy dark:text-white">
 				{title}
 			</h3>
 			<p className="mt-2 text-sm leading-relaxed text-muted-foreground">
@@ -54,10 +54,10 @@ function CaseCard({ slug, title, client, year, industry, service, description, i
 			</p>
 
 			<div className="mt-3 flex flex-wrap gap-2">
-				<span className="rounded-full border border-neutral-300 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wide text-neutral-600">
+				<span className="rounded-full border border-neutral-300 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wide text-neutral-600 dark:border-white/10 dark:text-neutral-400">
 					{industry}
 				</span>
-				<span className="rounded-full border border-neutral-300 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wide text-neutral-600">
+				<span className="rounded-full border border-neutral-300 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wide text-neutral-600 dark:border-white/10 dark:text-neutral-400">
 					{service}
 				</span>
 			</div>
@@ -102,7 +102,7 @@ export function CaseStudies({
 			/>
 
 			{showFilters && (
-				<div className="mx-auto mt-8 flex max-w-[1400px] flex-col gap-4 border-y border-neutral-300 px-5 py-8 lg:flex-row lg:items-center lg:justify-between">
+				<div className="mx-auto mt-8 flex max-w-[1400px] flex-col gap-4 border-y border-neutral-300 px-5 py-8 dark:border-white/10 lg:flex-row lg:items-center lg:justify-between">
 					<div className="flex flex-col gap-3 lg:flex-row lg:items-center lg:gap-6">
 						<FilterGroup
 							label="Industry"
@@ -134,7 +134,7 @@ export function CaseStudies({
 					<div className="mt-10 mb-10 flex justify-center">
 						<Link
 							to="/work"
-							className="inline-flex items-center gap-2 border border-black/15 bg-white px-8 py-3.5 text-sm font-semibold text-neutral-800 transition-colors hover:bg-muted"
+							className="inline-flex items-center gap-2 border border-black/15 bg-white px-8 py-3.5 text-sm font-semibold text-neutral-800 transition-colors hover:bg-muted dark:border-white/15 dark:bg-white/5 dark:text-white dark:hover:bg-white/10"
 						>
 							View All Case Studies
 							<ArrowRight className="size-4" />

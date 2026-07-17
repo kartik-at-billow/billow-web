@@ -59,16 +59,16 @@ function ServiceCard({ icon: Icon, number, title, description, index }) {
 			whileInView={{ opacity: 1, y: 0 }}
 			viewport={{ once: true, margin: "-60px" }}
 			transition={{ duration: 0.45, delay: index * 0.06 }}
-			className="group flex flex-col rounded-xl border border-neutral-300 bg-blue-50 p-7 transition-colors duration-300 hover:border-brand-navy hover:bg-brand-navy"
+			className="group flex flex-col rounded-xl border border-neutral-300 bg-blue-50 p-7 transition-colors duration-300 hover:border-brand-navy hover:bg-brand-navy-fixed dark:border-white/10 dark:bg-brand-midnight"
 		>
 			<div className="flex items-center justify-between">
-				<span className="flex size-12 items-center justify-center rounded-lg bg-brand-sky text-brand-navy transition-colors duration-300 group-hover:bg-white/10 group-hover:text-white">
+				<span className="flex size-12 items-center justify-center rounded-lg bg-brand-sky text-brand-navy-fixed transition-colors duration-300 group-hover:bg-white/10 group-hover:text-white">
 					<Icon className="size-6" />
 				</span>
 
 			</div>
 
-			<h3 className="mt-6 text-lg font-semibold text-neutral-900 transition-colors duration-300 group-hover:text-white">
+			<h3 className="mt-6 text-lg font-semibold text-neutral-900 transition-colors duration-300 group-hover:text-white dark:text-white">
 				{title}
 			</h3>
 			<p className="mt-3 text-sm leading-relaxed text-muted-foreground transition-colors duration-300 group-hover:text-white/75">
@@ -95,7 +95,7 @@ export function Expertise({ limit, showViewAll = false, headingLevel = "h2" }) {
 					showViewAll && (
 						<Link
 							to="/services"
-							className="group inline-flex items-center gap-1.5 text-sm font-semibold text-neutral-900 underline decoration-neutral-900/30 underline-offset-4 transition-colors hover:decoration-neutral-900"
+							className="group inline-flex items-center gap-1.5 text-sm font-semibold text-neutral-900 underline decoration-neutral-900/30 underline-offset-4 transition-colors hover:decoration-neutral-900 dark:text-white dark:decoration-white/30 dark:hover:decoration-white"
 						>
 							All Services
 							<ArrowRight className="size-4 transition-transform duration-300 group-hover:translate-x-0.5" />
