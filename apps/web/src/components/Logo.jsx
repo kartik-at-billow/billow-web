@@ -8,7 +8,10 @@ export function Logo({ className }) {
 			<img
 				src="/billow_logo.svg"
 				alt="Billow LLC — Committed to Your Success"
-				className={cn("h-10 w-auto select-none", className)}
+				className={cn(
+					"h-10 w-auto select-none",
+					className,
+				)}
 			/>
 		</Link>
 	);

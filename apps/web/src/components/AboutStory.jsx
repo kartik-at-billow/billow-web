@@ -27,7 +27,7 @@ export function AboutStory() {
 					<p className="text-xs font-bold uppercase tracking-[0.2em] text-brand-navy">
 						Our Story
 					</p>
-					<h2 className="mt-3 text-3xl font-extrabold tracking-tight text-neutral-900 sm:text-4xl">
+					<h2 className="mt-3 text-3xl font-extrabold tracking-tight text-neutral-900 dark:text-white sm:text-4xl">
 						Built by Engineers Who Have Solved These Problems Before
 					</h2>
 					<p className="mt-5 text-sm leading-relaxed text-muted-foreground sm:text-base">
@@ -50,13 +50,13 @@ export function AboutStory() {
 					{VALUES.map((value) => (
 						<div
 							key={value.title}
-							className="flex gap-4 rounded-xl bg-muted/30 border border-black/10  p-6"
+							className="flex gap-4 rounded-xl bg-muted/30 border border-black/10 dark:border-white/10  p-6"
 						>
-							<span className="flex size-11 shrink-0 items-center justify-center rounded-lg bg-brand-sky text-brand-navy">
+							<span className="flex size-11 shrink-0 items-center justify-center rounded-lg bg-brand-sky text-brand-navy-fixed">
 								<value.icon className="size-5" />
 							</span>
 							<div>
-								<h3 className="text-base font-semibold text-neutral-900">
+								<h3 className="text-base font-semibold text-neutral-900 dark:text-white">
 									{value.title}
 								</h3>
 								<p className="mt-1.5 text-sm leading-relaxed text-muted-foreground">

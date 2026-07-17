@@ -67,7 +67,7 @@ function ClientCard({ client }) {
       target="_blank"
       rel="noopener noreferrer"
       aria-label={`Visit ${client.alt} website`}
-      className="group relative flex h-36 items-center justify-center overflow-hidden bg-blue-50 transition-all duration-300 hover:z-10"
+      className="group relative flex h-36 items-center justify-center overflow-hidden bg-blue-50 transition-all duration-300 hover:z-10 dark:bg-brand-midnight"
     >
       {/* Logo */}
       <img
@@ -75,12 +75,12 @@ function ClientCard({ client }) {
         alt={client.alt}
         loading="lazy"
         className={`max-h-20 max-w-[180px] object-contain transition-all duration-300 group-hover:opacity-0 ${
-          client.invert ? "invert" : ""
+          client.invert ? "invert dark:[filter:none]" : ""
         }`}
       />
 
       {/* Hover Overlay */}
-      <div className="absolute inset-0 flex flex-col items-center justify-center bg-brand-navy px-6 text-center opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+      <div className="absolute inset-0 flex flex-col items-center justify-center bg-brand-navy-fixed px-6 text-center opacity-0 transition-opacity duration-300 group-hover:opacity-100">
         <p className="text-base font-medium leading-relaxed text-white">
           {client.description}
         </p>
@@ -94,13 +94,13 @@ export function Clients() {
   const bottomClients = CLIENTS.slice(6);
 
   return (
-    <section className="border-b border-black/5 py-20">
+    <section className="border-b border-black/5 py-20 dark:border-white/10">
       <div className="mx-auto max-w-7xl px-6">
         <SectionHeading title="Our Customers" />
 
         <div className="mt-10">
           {/* Top 6 Clients */}
-          <div className="grid grid-cols-1 gap-px border border-neutral-300 bg-neutral-300 md:grid-cols-2 lg:grid-cols-3">
+          <div className="grid grid-cols-1 gap-px border border-neutral-300 bg-neutral-300 dark:border-white/10 dark:bg-white/10 md:grid-cols-2 lg:grid-cols-3">
             {topClients.map((client) => (
               <ClientCard key={client.alt} client={client} />
             ))}
@@ -108,7 +108,7 @@ export function Clients() {
 
           {/* Bottom 2 Clients */}
           <div className="flex justify-center">
-            <div className="grid w-full grid-cols-1 gap-px border-x border-b border-neutral-300 bg-neutral-300 md:w-2/3 md:grid-cols-2">
+            <div className="grid w-full grid-cols-1 gap-px border-x border-b border-neutral-300 bg-neutral-300 dark:border-white/10 dark:bg-white/10 md:w-2/3 md:grid-cols-2">
               {bottomClients.map((client) => (
                 <ClientCard key={client.alt} client={client} />
               ))}

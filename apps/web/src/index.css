@@ -5,7 +5,7 @@
 	--font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
 	--font-display: "Space Grotesk", "Inter", ui-sans-serif, system-ui, sans-serif;
 
-	--color-brand-navy: #12345b;
+	--color-brand-navy-fixed: #12345b;
 	--color-brand-navy-light: #1c4a7e;
 	--color-brand-green: #22c55e;
 	--color-brand-green-dark: #16a34a;
@@ -13,6 +13,28 @@
 	--color-brand-sky: #dbeafe;
 	--color-brand-purple: #241541;
 	--color-brand-purple-light: #3a2560;
+	--color-brand-midnight: #0a1628;
+}
+
+/*
+ * --brand-navy (and so every text-brand-navy/border-brand-navy utility) is
+ * theme-aware, the same way shadcn's own --foreground is: dark navy on a
+ * light page, a soft brand-sky blue on a dark page — otherwise headings and
+ * links set in navy would be unreadable once the page turns dark. Fixed
+ * brand-navy *backgrounds* (full-bleed sections, hover fills) intentionally
+ * use --color-brand-navy-fixed instead, so those stay the same navy block
+ * regardless of site theme.
+ */
+:root {
+	--brand-navy: #12345b;
+}
+
+.dark {
+	--brand-navy: #dbeafe;
+}
+
+@theme inline {
+	--color-brand-navy: var(--brand-navy);
 }
 
 html {
@@ -21,6 +43,10 @@ html {
 
 body {
 	background-color: #eff6ff;
+}
+
+.dark body {
+	background-color: #0a1628;
 }
 
 /* faint graph-paper grid, used on the home page background only. lives on a
@@ -39,6 +65,12 @@ body {
 	-webkit-mask-image: linear-gradient(to bottom, black, black 100vh, transparent 190vh);
 }
 
+.dark .bg-grid-blue {
+	background-image:
+		linear-gradient(to right, rgba(255, 255, 255, 0.06) 1px, transparent 1px),
+		linear-gradient(to bottom, rgba(255, 255, 255, 0.06) 1px, transparent 1px);
+}
+
 /* hero grid, as two stacked overlay layers (not combined with the hero's own
    background) so it can be styled independently. a single repeating
    background-image can't shift its own hue by position, so the blue-200 to
@@ -54,6 +86,12 @@ body {
 	-webkit-mask-image: linear-gradient(to bottom, black, transparent);
 }
 
+.dark .bg-grid-hero-overlay-top {
+	background-image:
+		linear-gradient(to right, rgba(255, 255, 255, 0.09) 1px, transparent .5px),
+		linear-gradient(to bottom, rgba(255, 255, 255, 0.09) 1px, transparent .5px);
+}
+
 .bg-grid-hero-overlay-bottom {
 	background-image:
 		linear-gradient(to right, #dbeafe 1px, transparent .5px),
@@ -61,4 +99,10 @@ body {
 	background-size: 72px 72px;
 	mask-image: linear-gradient(to bottom, transparent, black);
 	-webkit-mask-image: linear-gradient(to bottom, transparent, black);
+}
+
+.dark .bg-grid-hero-overlay-bottom {
+	background-image:
+		linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent .5px),
+		linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent .5px);
 }

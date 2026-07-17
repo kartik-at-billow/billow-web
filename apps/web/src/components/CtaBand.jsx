@@ -8,9 +8,9 @@ export function CtaBand({
 	buttonText = "Start a Project"
 }) {
 	return (
-		<section className="bg-blue-50 py-20">
+		<section className="bg-blue-50 py-20 dark:bg-brand-midnight">
 			<div className="mx-auto flex max-w-[1400px] flex-col items-start justify-between gap-8 px-5 sm:flex-row sm:items-center">
-				<h2 className="max-w-2xl text-3xl font-extrabold tracking-tight text-neutral-900 sm:text-4xl">
+				<h2 className="max-w-2xl text-3xl font-extrabold tracking-tight text-neutral-900 dark:text-white sm:text-4xl">
 					{title}
 				</h2>
 				<Link

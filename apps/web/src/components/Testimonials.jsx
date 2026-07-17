@@ -53,17 +53,17 @@ const TESTIMONIALS = [
 function TestimonialCard({ quote, name, title, company }) {
 	const initial = name.charAt(0);
 	return (
-		<div className="flex h-full min-h-[22rem] flex-col rounded-xl border border-neutral-300 bg-blue-50 p-8">
+		<div className="flex h-full min-h-[22rem] flex-col rounded-xl border border-neutral-300 bg-blue-50 p-8 dark:border-white/10 dark:bg-brand-midnight">
 			<Quote className="size-9 text-brand-navy/25" strokeWidth={1.5} />
-			<p className="mt-6 flex-1 text-base leading-relaxed text-neutral-900">
+			<p className="mt-6 flex-1 text-base leading-relaxed text-neutral-900 dark:text-white">
 				{quote}
 			</p>
-			<div className="mt-8 flex items-center gap-3 border-t border-neutral-300 pt-6">
-				<span className="flex size-9 shrink-0 items-center justify-center rounded-md bg-brand-navy text-sm font-semibold text-white">
+			<div className="mt-8 flex items-center gap-3 border-t border-neutral-300 pt-6 dark:border-white/10">
+				<span className="flex size-9 shrink-0 items-center justify-center rounded-md bg-brand-navy-fixed text-sm font-semibold text-white">
 					{initial}
 				</span>
 				<div>
-					<p className="text-sm font-semibold text-neutral-900">{name}</p>
+					<p className="text-sm font-semibold text-neutral-900 dark:text-white">{name}</p>
 					<p className="text-xs text-muted-foreground">
 						{title} · {company}
 					</p>
@@ -101,7 +101,7 @@ export function Testimonials() {
 							type="button"
 							onClick={scrollPrev}
 							aria-label="Previous testimonial"
-							className="flex size-9 items-center justify-center rounded-full border border-neutral-300 text-neutral-900 transition-colors hover:border-brand-navy hover:bg-brand-navy hover:text-white"
+							className="flex size-9 items-center justify-center rounded-full border border-neutral-300 text-neutral-900 transition-colors hover:border-brand-navy hover:bg-brand-navy-fixed hover:text-white dark:border-neutral-700 dark:text-white"
 						>
 							<ArrowLeft className="size-4" />
 						</button>
@@ -109,13 +109,13 @@ export function Testimonials() {
 							type="button"
 							onClick={scrollNext}
 							aria-label="Next testimonial"
-							className="flex size-9 items-center justify-center rounded-full border border-neutral-300 text-neutral-900 transition-colors hover:border-brand-navy hover:bg-brand-navy hover:text-white"
+							className="flex size-9 items-center justify-center rounded-full border border-neutral-300 text-neutral-900 transition-colors hover:border-brand-navy hover:bg-brand-navy-fixed hover:text-white dark:border-neutral-700 dark:text-white"
 						>
 							<ArrowRight className="size-4" />
 						</button>
 					</div>
 				</div>
-				<h2 className="mt-3 max-w-3xl text-3xl font-extrabold leading-[1.1] tracking-tight text-neutral-900 sm:text-4xl md:text-5xl">
+				<h2 className="mt-3 max-w-3xl text-3xl font-extrabold leading-[1.1] tracking-tight text-neutral-900 dark:text-white sm:text-4xl md:text-5xl">
 					A Partner our clients <span className="italic text-brand-navy">quietly recommend.</span>
 				</h2>
 

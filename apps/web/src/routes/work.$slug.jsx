@@ -10,7 +10,7 @@ export default function CaseStudyDetail() {
 	const study = CASE_STUDIES.find((c) => c.slug === slug);
 
 	return (
-		<div className="min-h-screen bg-blue-50 text-foreground antialiased">
+		<div className="min-h-screen bg-blue-50 text-foreground antialiased dark:bg-brand-midnight">
 			<Navbar />
 			<main className="pt-24">
 				{study ? (
@@ -27,22 +27,22 @@ export default function CaseStudyDetail() {
 							<p className="mt-6 text-xs font-bold uppercase tracking-[0.2em] text-brand-navy">
 								{study.client} · {study.year}
 							</p>
-							<h1 className="mt-3 max-w-3xl text-3xl font-extrabold leading-[1.1] tracking-tight text-neutral-900 sm:text-4xl md:text-5xl">
+							<h1 className="mt-3 max-w-3xl text-3xl font-extrabold leading-[1.1] tracking-tight text-neutral-900 dark:text-white sm:text-4xl md:text-5xl">
 								{study.title}
 							</h1>
 							<p className="mt-4 max-w-xl text-sm text-muted-foreground sm:text-base">
 								{study.description}
 							</p>
 							<div className="mt-6 flex flex-wrap gap-2">
-								<span className="rounded-full border border-neutral-300 bg-white px-3 py-1 text-xs font-semibold uppercase tracking-wide text-neutral-800">
+								<span className="rounded-full border border-neutral-300 bg-white px-3 py-1 text-xs font-semibold uppercase tracking-wide text-neutral-800 dark:border-neutral-700 dark:bg-white/5 dark:text-neutral-300">
 									{study.industry}
 								</span>
-								<span className="rounded-full border border-neutral-300 bg-white px-3 py-1 text-xs font-semibold uppercase tracking-wide text-neutral-800">
+								<span className="rounded-full border border-neutral-300 bg-white px-3 py-1 text-xs font-semibold uppercase tracking-wide text-neutral-800 dark:border-neutral-700 dark:bg-white/5 dark:text-neutral-300">
 									{study.service}
 								</span>
 							</div>
 
-							<div className="mt-10 aspect-[16/9] w-full overflow-hidden rounded-xl border border-neutral-300">
+							<div className="mt-10 aspect-[16/9] w-full overflow-hidden rounded-xl border border-neutral-300 dark:border-white/10">
 								<img
 									src={study.image}
 									alt=""
@@ -50,7 +50,7 @@ export default function CaseStudyDetail() {
 								/>
 							</div>
 
-							<div className="mt-10 grid max-w-lg grid-cols-3 gap-6 border-t border-neutral-300 pt-8">
+							<div className="mt-10 grid max-w-lg grid-cols-3 gap-6 border-t border-neutral-300 pt-8 dark:border-white/10">
 								{study.metrics.map((m) => (
 									<div key={m.label}>
 										<div className="text-2xl font-extrabold tracking-tight text-brand-navy sm:text-3xl">

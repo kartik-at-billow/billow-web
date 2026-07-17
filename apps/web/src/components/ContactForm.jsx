@@ -3,8 +3,8 @@ import { motion } from "framer-motion";
 import { ArrowUpRight, CheckCircle2, Mail, MapPin } from "lucide-react";
 
 const FIELD =
-	"w-full border-b border-neutral-300 bg-transparent py-2 text-sm text-neutral-900 outline-none transition placeholder:text-muted-foreground/60 focus:border-brand-navy";
-const LABEL = "mb-1.5 block text-xs font-bold uppercase tracking-wide text-neutral-500";
+	"w-full border-b border-neutral-300 bg-transparent py-2 text-sm text-neutral-900 outline-none transition placeholder:text-muted-foreground/60 focus:border-brand-navy dark:border-neutral-700 dark:text-white";
+const LABEL = "mb-1.5 block text-xs font-bold uppercase tracking-wide text-neutral-500 dark:text-neutral-400";
 
 const COUNTRY_CODES = [
 	{ value: "+1", label: "US +1" },
@@ -30,7 +30,7 @@ export function ContactForm() {
 	}
 
 	return (
-		<section id="contact" className="scroll-mt-20 bg-blue-50 pb-16">
+		<section id="contact" className="scroll-mt-20 bg-blue-50 pb-16 dark:bg-brand-midnight">
 			<div className="mx-auto max-w-[1400px] px-5">
 				<div className="grid gap-16 lg:grid-cols-2">
 					{/* Form */}
@@ -38,7 +38,7 @@ export function ContactForm() {
 						<p className="text-xs font-bold uppercase tracking-[0.2em] text-brand-navy">
 							01 / Project Inquiry
 						</p>
-						<h2 className="mt-3 text-3xl font-extrabold tracking-tight text-neutral-900 sm:text-4xl">
+						<h2 className="mt-3 text-3xl font-extrabold tracking-tight text-neutral-900 dark:text-white sm:text-4xl">
 							A few details to get us started.
 						</h2>
 
@@ -50,7 +50,7 @@ export function ContactForm() {
 									className="flex flex-col items-start py-8"
 								>
 									<CheckCircle2 className="size-12 text-brand-green" />
-									<h3 className="mt-4 text-xl font-bold text-neutral-900">
+									<h3 className="mt-4 text-xl font-bold text-neutral-900 dark:text-white">
 										Thanks — we've got your message!
 									</h3>
 									<p className="mt-2 max-w-sm text-sm text-muted-foreground">
@@ -203,7 +203,7 @@ export function ContactForm() {
 						<p className="text-xs font-bold uppercase tracking-[0.2em] text-brand-navy">
 							02 / Contact
 						</p>
-						<h2 className="mt-3 text-3xl font-extrabold tracking-tight text-neutral-900 sm:text-4xl">
+						<h2 className="mt-3 text-3xl font-extrabold tracking-tight text-neutral-900 dark:text-white sm:text-4xl">
 							Or find us in person.
 						</h2>
 						<p className="mt-4 text-sm text-muted-foreground sm:text-base">
@@ -211,24 +211,24 @@ export function ContactForm() {
 						</p>
 
 						<div className="mt-8 flex flex-col gap-4 ">
-							<div className="rounded-xl bg-muted/30 border border-neutral-300 p-6">
-								<MapPin className="size-5 text-neutral-900" />
+							<div className="rounded-xl bg-muted/30 border border-neutral-300 p-6 dark:border-white/10">
+								<MapPin className="size-5 text-neutral-900 dark:text-white" />
 								<p className="mt-4 text-[11px] font-semibold uppercase tracking-widest text-muted-foreground">
 									Office
 								</p>
-								<p className="mt-1 font-semibold text-neutral-900">
+								<p className="mt-1 font-semibold text-neutral-900 dark:text-white">
 									Sacramento, CA · Remote Nationwide
 								</p>
 							</div>
 
-							<div className="rounded-xl border bg-muted/30 border-neutral-300 p-6">
-								<Mail className="size-5 text-neutral-900" />
+							<div className="rounded-xl border bg-muted/30 border-neutral-300 p-6 dark:border-white/10">
+								<Mail className="size-5 text-neutral-900 dark:text-white" />
 								<p className="mt-4 text-[11px] font-semibold uppercase tracking-widest text-muted-foreground">
 									Direct Email
 								</p>
 								<a
 									href="mailto:hello@billowllc.com"
-									className="mt-1 block font-semibold text-neutral-900 transition-colors hover:text-brand-navy"
+									className="mt-1 block font-semibold text-neutral-900 transition-colors hover:text-brand-navy dark:text-white"
 								>
 									General - hello@billowllc.com
 								</a>
