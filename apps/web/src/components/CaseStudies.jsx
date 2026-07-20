@@ -18,8 +18,8 @@ function FilterGroup({ label, options, active, onChange }) {
 					onClick={() => onChange(option)}
 					className={`rounded-full border px-4 py-1.5 text-sm font-medium transition-colors ${
 						active === option
-							? "border-neutral-900 bg-neutral-900 text-white"
-							: "border-neutral-300 bg-blue-50 text-neutral-800 hover:border-neutral-900"
+							? "border-neutral-900 bg-neutral-900 text-white dark:border-white dark:bg-white dark:text-neutral-900"
+							: "border-neutral-300 bg-blue-50 text-neutral-800 hover:border-neutral-900 dark:border-neutral-700 dark:bg-brand-midnight dark:text-neutral-300 dark:hover:border-white"
 					}`}
 				>
 					{option}
@@ -66,7 +66,7 @@ export function CaseStudies({
 			/>
 
 			{showFilters && (
-				<div className="mx-auto mt-8 flex max-w-[1400px] flex-col gap-4 border-y border-neutral-300 px-5 py-8 lg:flex-row lg:items-center lg:justify-between">
+				<div className="mx-auto mt-8 flex max-w-[1400px] flex-col gap-4 border-y border-neutral-300 px-5 py-8 dark:border-white/10 lg:flex-row lg:items-center lg:justify-between">
 					<div className="flex flex-col gap-3 lg:flex-row lg:items-center lg:gap-6">
 						<FilterGroup
 							label="Industry"
@@ -98,7 +98,7 @@ export function CaseStudies({
 					<div className="mt-10 mb-10 flex justify-center">
 						<Link
 							to="/work"
-							className="inline-flex items-center gap-2 border border-black/15 bg-white px-8 py-3.5 text-sm font-semibold text-neutral-800 transition-colors hover:bg-muted"
+							className="inline-flex items-center gap-2 border border-black/15 bg-white px-8 py-3.5 text-sm font-semibold text-neutral-800 transition-colors hover:bg-muted dark:border-white/15 dark:bg-white/5 dark:text-white dark:hover:bg-white/10"
 						>
 							View All Case Studies
 							<ArrowRight className="size-4" />

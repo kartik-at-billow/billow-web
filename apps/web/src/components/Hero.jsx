@@ -10,22 +10,19 @@ import { cn } from "@Billow-web/ui/lib/utils";
  */
 const SLIDES = [
 	{
-		titleTop: "Driving Innovation",
-		titleRest: "Through Expert IT Solutions That Work.",
-		subtitle: (
-			<>
-				We empower organizations with{" "}
-				<strong className="font-semibold text-brand-navy">
-					cutting-edge cloud, cybersecurity, automation
-				</strong>{" "}
-				and software solutions backed by{" "}
-				<strong className="font-semibold text-brand-navy">
-					100+ expert consultants
-				</strong>{" "}
-				across 40+ technologies.
-			</>
-		),
-	},
+	titleTop: "Empowering Enterprises",
+	titleRest: "With AI-Driven Innovation.",
+	subtitle: (
+	<>
+		From intelligent automation to Generative AI, we build{" "}
+		<strong className="font-semibold text-brand-navy">
+			scalable AI & Machine Learning solutions
+		</strong>{" "}
+		that automate processes, unlock actionable insights, and accelerate
+		business growth.
+	</>
+),
+},
 	{
 		titleTop: "Protect What",
 		titleRest: "Matters Most With Zero-Trust Security.",
@@ -62,7 +59,7 @@ const SLIDES = [
 	},
 ];
 
-const AUTOPLAY_MS = 4000;
+const AUTOPLAY_MS = 4200;
 
 export function Hero() {
 	const [index, setIndex] = useState(0);
@@ -82,9 +79,7 @@ export function Hero() {
 	return (
 		<section
   id="top"
-  onMouseEnter={() => setPaused(true)}
-  onMouseLeave={() => setPaused(false)}
-  className="relative z-0 flex min-h-screen flex-col items-center justify-center overflow-hidden bg-gradient-to-b from-blue-200 to-blue-50 pt-16 pb-12"
+  className="relative z-0 flex min-h-screen flex-col items-center justify-center overflow-hidden bg-gradient-to-b from-blue-200 to-blue-50 pt-16 pb-12 dark:from-[#122240] dark:to-brand-midnight"
 >
 			<div aria-hidden="true" className="pointer-events-none absolute inset-0 -z-10 bg-grid-hero-overlay-top" />
 			<div aria-hidden="true" className="pointer-events-none absolute inset-0 -z-10 bg-grid-hero-overlay-bottom" />
@@ -100,7 +95,7 @@ export function Hero() {
 							transition={{ duration: 0.5, ease: "easeOut" }}
 						>
 							<h1 className="text-4xl font-extrabold leading-[1.05] tracking-tight sm:text-5xl md:text-6xl">
-								<span className="text-neutral-900">{slide.titleTop}</span>{" "}
+								<span className="text-neutral-900 dark:text-white">{slide.titleTop}</span>{" "}
 								<span className="text-brand-navy">{slide.titleRest}</span>
 							</h1>
 
@@ -118,7 +113,7 @@ export function Hero() {
 							src="/hero-arrow.png"
 							alt=""
 							aria-hidden="true"
-							className="pointer-events-none absolute -left-[8rem] -top-[4.5rem] hidden w-40 select-none mix-blend-multiply sm:block"
+							className="pointer-events-none absolute -left-[8rem] -top-[4.5rem] hidden w-40 select-none mix-blend-multiply dark:invert dark:mix-blend-screen sm:block"
 						/>
 						<Link
 							to="/contact"
@@ -129,7 +124,7 @@ export function Hero() {
 					</div>
 					<Link
 						to="/services"
-						className="inline-flex items-center justify-center border border-black/15 bg-white px-8 py-3.5 text-sm font-semibold text-neutral-800 transition-colors hover:bg-muted"
+						className="inline-flex items-center justify-center border border-black/15 bg-white px-8 py-3.5 text-sm font-semibold text-neutral-800 transition-colors hover:bg-muted dark:border-white dark:bg-white dark:text-neutral-900 dark:hover:bg-white/90"
 					>
 						See Demo
 					</Link>
@@ -147,8 +142,8 @@ export function Hero() {
 							className={cn(
 								"h-2 rounded-full transition-all duration-300",
 								i === index
-									? "w-7 bg-brand-navy"
-									: "w-2 bg-brand-navy/25 hover:bg-brand-navy/40",
+									? "w-7 bg-brand-navy-fixed"
+									: "w-2 bg-brand-navy-fixed/25 hover:bg-brand-navy-fixed/40",
 							)}
 						/>
 					))}

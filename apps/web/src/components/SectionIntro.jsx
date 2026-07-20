@@ -23,7 +23,7 @@ export function SectionIntro({
 							</p>
 							{eyebrowAction}
 						</div>
-						<Heading className="mt-3 max-w-3xl text-3xl font-extrabold leading-[1.1] tracking-tight text-neutral-900 sm:text-4xl md:text-5xl">
+						<Heading className="mt-3 max-w-3xl text-3xl font-extrabold leading-[1.1] tracking-tight text-neutral-900 dark:text-white sm:text-4xl md:text-5xl">
 							{headline}
 						</Heading>
 					</div>
@@ -35,7 +35,7 @@ export function SectionIntro({
 				</div>
 			</div>
 
-			{showDivider && <div className="my-30 border-t border-neutral-300" />}
+			{showDivider && <div className="my-30 border-t border-neutral-300 dark:border-white/10" />}
 		</>
 	);
 }

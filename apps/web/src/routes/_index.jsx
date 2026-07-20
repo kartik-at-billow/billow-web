@@ -12,7 +12,7 @@ import { Footer } from "@/components/Footer";
 
 export default function Home() {
 	return (
-		<div className="relative z-0 min-h-screen bg-blue-50 text-foreground antialiased">
+		<div className="relative z-0 min-h-screen bg-blue-50 text-foreground antialiased dark:bg-brand-midnight">
 			<div aria-hidden="true" className="pointer-events-none absolute inset-0 -z-10 bg-grid-blue" />
 			<Navbar />
 			<main>

@@ -6,7 +6,7 @@ import { Footer } from "@/components/Footer";
 
 export default function Contact() {
 	return (
-		<div className="min-h-screen bg-blue-50 text-foreground antialiased">
+		<div className="min-h-screen bg-blue-50 text-foreground antialiased dark:bg-brand-midnight">
 			<Navbar />
 			<main className="pt-24">
 				<SectionIntro

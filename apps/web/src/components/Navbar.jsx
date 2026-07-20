@@ -3,6 +3,7 @@ import { Mail, Menu, X, ArrowUpRight } from "lucide-react";
 import { Link, useLocation } from "react-router";
 import { cn } from "@Billow-web/ui/lib/utils";
 import { Logo } from "@/components/Logo";
+import { ThemeToggle } from "@/components/ThemeToggle";
 
 const NAV_LINKS = [
 	{ label: "Services", href: "/services" },
@@ -29,7 +30,7 @@ export function Navbar() {
 			className={cn(
 				"fixed inset-x-0 top-0 z-50 transition-all duration-300",
 				scrolled
-					? "border-b border-black/5 bg-white/65 backdrop-blur-md"
+					? "border-b border-black/5 bg-white/65 backdrop-blur-md dark:border-white/10 dark:bg-brand-midnight/70"
 					: "border-b border-transparent bg-transparent",
 			)}
 		>
@@ -53,7 +54,8 @@ export function Navbar() {
 					))}
 				</div>
 
-				<div className="hidden md:block">
+				<div className="hidden items-center gap-3 md:flex">
+					<ThemeToggle />
 					<Link
 						to="/contact"
 						className="inline-flex items-center gap-2 bg-black px-5 py-2.5 text-sm font-semibold text-white transition-transform hover:-translate-y-0.5 hover:bg-black/85"
@@ -63,18 +65,21 @@ export function Navbar() {
 					</Link>
 				</div>
 
-				<button
-					type="button"
-					aria-label="Toggle menu"
-					onClick={() => setOpen((v) => !v)}
-					className="inline-flex size-10 items-center justify-center rounded-lg text-brand-navy md:hidden"
-				>
-					{open ? <X className="size-6" /> : <Menu className="size-6" />}
-				</button>
+				<div className="flex items-center gap-1 md:hidden">
+					<ThemeToggle />
+					<button
+						type="button"
+						aria-label="Toggle menu"
+						onClick={() => setOpen((v) => !v)}
+						className="inline-flex size-10 items-center justify-center rounded-lg text-brand-navy"
+					>
+						{open ? <X className="size-6" /> : <Menu className="size-6" />}
+					</button>
+				</div>
 			</nav>
 
 			{open && (
-				<div className="border-t border-black/5 px-5 py-4 md:hidden">
+				<div className="border-t border-black/5 px-5 py-4 dark:border-white/10 md:hidden">
 					<div className="flex flex-col gap-1">
 						{NAV_LINKS.map((link) => (
 							<Link

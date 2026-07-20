@@ -53,7 +53,7 @@ export function Footer() {
 	}, []);
 
 	return (
-		<footer id="site-footer" className="border-t border-black/5 bg-blue-50">
+		<footer id="site-footer" className="border-t border-black/5 bg-blue-50 dark:border-white/10 dark:bg-brand-midnight">
 			<div className="mx-auto max-w-[1400px] px-5 py-14">
 				<div className="grid gap-10 md:grid-cols-[1.4fr_1fr_1fr_1fr]">
 					<div>
@@ -65,7 +65,7 @@ export function Footer() {
 						</p>
 						<Link
 							to="/contact"
-							className="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-neutral-900 underline decoration-neutral-900/30 underline-offset-4 transition-colors hover:decoration-neutral-900"
+							className="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-neutral-900 underline decoration-neutral-900/30 underline-offset-4 transition-colors hover:decoration-neutral-900 dark:text-white dark:decoration-white/30 dark:hover:decoration-white"
 						>
 							Start a project
 							<ArrowUpRight className="size-4" />
@@ -117,12 +117,12 @@ export function Footer() {
 								{item.href ? (
 									<a
 										href={item.href}
-										className="mt-1 block text-sm font-medium text-neutral-900 transition-colors hover:text-brand-navy"
+										className="mt-1 block text-sm font-medium text-neutral-900 transition-colors hover:text-brand-navy dark:text-white"
 									>
 										{item.value}
 									</a>
 								) : (
-									<p className="mt-1 text-sm font-medium text-neutral-900">{item.value}</p>
+									<p className="mt-1 text-sm font-medium text-neutral-900 dark:text-white">{item.value}</p>
 								)}
 							</div>
 						))}
@@ -131,8 +131,8 @@ export function Footer() {
 					</div>
 				</div>
 
-				<div className="mt-12 flex flex-col items-center justify-between gap-6 border-t border-black/5 pt-6 sm:flex-row">
-					<p className="text-xs text-muted-foreground">
+				<div className="mt-12 flex flex-col items-center justify-between gap-6 border-t border-black/5 pt-6 dark:border-white/10 sm:flex-row">
+					<p className="text-xs text-black dark:text-white">
 						© 2026 Billow LLC. All rights reserved.
 					</p>
 				</div>

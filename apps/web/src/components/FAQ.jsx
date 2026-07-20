@@ -28,7 +28,7 @@ const FAQS = [
 
 function FaqItem({ item, isOpen, onToggle }) {
 	return (
-		<div className="overflow-hidden rounded-xl border border-black/10 bg-muted/30">
+		<div className="overflow-hidden rounded-xl border border-black/10 bg-muted/30 dark:border-white/10">
 			<button
 				type="button"
 				onClick={onToggle}
@@ -63,7 +63,7 @@ export function FAQ() {
 	const [open, setOpen] = useState(0);
 
 	return (
-		<section id="faq" className="bg-blue-50 py-14">
+		<section id="faq" className="bg-blue-50 py-14 dark:bg-brand-midnight">
 			<div className="mx-auto max-w-3xl px-5">
 				<h2 className="mt-2 text-center text-3xl font-extrabold tracking-tight text-brand-navy sm:text-4xl">
 					Frequently Asked Questions

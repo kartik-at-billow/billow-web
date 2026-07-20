@@ -26,8 +26,8 @@ const STEPS = [
 
 export function WhyBillow() {
 	return (
-		<section id="why-billow" className="relative bg-blue-50">
-			<div className="bg-brand-navy pb-14 pt-20">
+		<section id="why-billow" className="relative bg-blue-50 dark:bg-brand-midnight">
+			<div className="bg-brand-navy-fixed pb-14 pt-20">
 				<div className="mx-auto max-w-[1400px] px-5">
 					<div>
 						<p className="text-xs font-bold uppercase tracking-[0.2em] text-blue-200">
@@ -37,8 +37,7 @@ export function WhyBillow() {
 							A four-step process, <span className="italic text-blue-300">tuned</span> <br /> by every engagement.
 						</h2>
 						<p className="mt-4 max-w-xl text-sm text-white/60 sm:text-base">
-							No mystery, no theatre. The same four movements, adapted in
-							weight to what your project actually needs.
+							A structured four-phase methodology, customized to align with your project's specific objectives and requirements.
 						</p>
 					</div>
 
@@ -56,7 +55,7 @@ export function WhyBillow() {
 									<h3 className="text-base font-semibold text-white">{step.title}</h3>
 									<p className="mt-3 text-sm leading-relaxed text-white/60">{step.body}</p>
 								</div>
-								<div className="mt-8 flex size-12 items-center justify-center rounded-lg bg-white/5 text-brand-sky ring-1 ring-white/10 transition-colors duration-300 group-hover:bg-brand-sky group-hover:text-brand-navy">
+								<div className="mt-8 flex size-12 items-center justify-center rounded-lg bg-white/5 text-brand-sky ring-1 ring-white/10 transition-colors duration-300 group-hover:bg-brand-sky group-hover:text-brand-navy-fixed">
 									<step.icon className="size-6" />
 								</div>
 							</motion.div>

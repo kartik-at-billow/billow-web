@@ -10,7 +10,7 @@ export function Partners() {
       id="partners"
       className="relative overflow-hidden bg-slate-950 py-15 text-white"
     >
-      <div className="absolute inset-0 bg-brand-navy" />
+      <div className="absolute inset-0 bg-brand-navy-fixed" />
 
       <div className="relative mx-auto max-w-7xl px-6">
         <div className="mx-auto max-w-3xl text-center">
