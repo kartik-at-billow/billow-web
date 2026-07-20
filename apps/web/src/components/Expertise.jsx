@@ -62,7 +62,7 @@ function ServiceCard({ icon: Icon, number, title, description, index }) {
 			className="group flex flex-col rounded-xl border border-neutral-300 bg-blue-50 p-7 transition-colors duration-300 hover:border-brand-navy hover:bg-brand-navy-fixed dark:border-white/10 dark:bg-brand-midnight"
 		>
 			<div className="flex items-center justify-between">
-				<span className="flex size-12 items-center justify-center rounded-lg bg-brand-sky text-brand-navy-fixed transition-colors duration-300 group-hover:bg-white/10 group-hover:text-white">
+				<span className="flex size-12 items-center justify-center rounded-lg bg-brand-sky text-brand-navy-fixed transition-colors duration-300 group-hover:bg-white/10 group-hover:text-white dark:bg-white/10 dark:text-white dark:group-hover:bg-brand-sky dark:group-hover:text-brand-navy-fixed">
 					<Icon className="size-6" />
 				</span>
 
