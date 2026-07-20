@@ -1,60 +1,13 @@
 import { motion } from "framer-motion";
-import {
-	ArrowRight,
-	ArrowUpRight,
-	Cloud,
-	Code2,
-	LayoutGrid,
-	ShieldCheck,
-	Users,
-	Workflow,
-} from "lucide-react";
+import { ArrowRight, ArrowUpRight } from "lucide-react";
 import { Link } from "react-router";
 import { SectionIntro } from "@/components/SectionIntro";
+import { SERVICES } from "@/lib/services";
 
-const SERVICES = [
-	{
-		icon: Cloud,
-		title: "Cloud Consulting",
-		description:
-			"Cloud strategy, migration planning and multi-cloud architecture services that modernize your infrastructure seamlessly.",
-	},
-	{
-		icon: ShieldCheck,
-		title: "Cybersecurity",
-		description:
-			"Zero-trust frameworks, penetration testing and compliance adherence to protect your most critical business assets.",
-	},
-	{
-		icon: Workflow,
-		title: "Business Automation",
-		description:
-			"Workflow automation, RPA and process optimization that eliminate inefficiencies and boost productivity at scale.",
-	},
-	{
-		icon: Code2,
-		title: "Custom Software & AI/ML Solution",
-		description:
-			"End-to-end software development lifecycle services from design to deployment and ongoing maintenance.",
-	},
-	{
-		icon: LayoutGrid,
-		title: "Modern Workplace",
-		description:
-			"Microsoft 365, Teams, collaboration tools and digital workspace solutions for today's hybrid workforce.",
-	},
-	{
-		icon: Users,
-		title: "IT Staffing",
-		description:
-			"Expert talent placement, contract staffing and team augmentation to scale your capabilities on demand.",
-	},
-];
-
-function ServiceCard({ icon: Icon, number, title, description, index }) {
+function ServiceCard({ slug, icon: Icon, title, description, index }) {
 	return (
 		<motion.a
-			href="/contact"
+			href={`/services/${slug}`}
 			initial={{ opacity: 0, y: 24 }}
 			whileInView={{ opacity: 1, y: 0 }}
 			viewport={{ once: true, margin: "-60px" }}
@@ -65,7 +18,9 @@ function ServiceCard({ icon: Icon, number, title, description, index }) {
 				<span className="flex size-12 items-center justify-center rounded-lg bg-brand-sky text-brand-navy-fixed transition-colors duration-300 group-hover:bg-white/10 group-hover:text-white dark:bg-white/10 dark:text-white dark:group-hover:bg-brand-sky dark:group-hover:text-brand-navy-fixed">
 					<Icon className="size-6" />
 				</span>
-
+				<span className="font-display text-sm font-semibold text-muted-foreground transition-colors duration-300 group-hover:text-white/50">
+					{String(index + 1).padStart(2, "0")}
+				</span>
 			</div>
 
 			<h3 className="mt-6 text-lg font-semibold text-neutral-900 transition-colors duration-300 group-hover:text-white dark:text-white">
@@ -114,7 +69,7 @@ export function Expertise({ limit, showViewAll = false, headingLevel = "h2" }) {
 			<div className="mx-auto max-w-[1400px] px-5">
 				<div className={`grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3 ${limit ? "mt-10" : "mt-16"}`}>
 					{services.map((service, i) => (
-						<ServiceCard key={service.title} {...service} index={i} />
+						<ServiceCard key={service.slug} {...service} index={i} />
 					))}
 				</div>
 			</div>

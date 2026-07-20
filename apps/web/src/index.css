@@ -30,7 +30,7 @@
 }
 
 .dark {
-	--brand-navy: #dbeafe;
+	--brand-navy: #93c5fd;
 }
 
 @theme inline {
@@ -88,8 +88,8 @@ body {
 
 .dark .bg-grid-hero-overlay-top {
 	background-image:
-		linear-gradient(to right, rgba(255, 255, 255, 0.09) 1px, transparent .5px),
-		linear-gradient(to bottom, rgba(255, 255, 255, 0.09) 1px, transparent .5px);
+		linear-gradient(to right, rgba(255, 255, 255, 0.035) 1px, transparent .5px),
+		linear-gradient(to bottom, rgba(255, 255, 255, 0.035) 1px, transparent .5px);
 }
 
 .bg-grid-hero-overlay-bottom {
@@ -101,8 +101,35 @@ body {
 	-webkit-mask-image: linear-gradient(to bottom, transparent, black);
 }
 
+/* grid lines, scoped to the landing section only on the work/services detail
+   pages. the linear layer now fades in at the top (12%) and back out again
+   by the bottom (85% to 100%) since this box is only as tall as the landing
+   section itself -- without the bottom fade the grid would still be partly
+   opaque right up to the box's edge and then just stop, reading as a hard
+   cutoff rather than a fade. */
+.bg-grid-corner-fade {
+	background-image:
+		linear-gradient(to right, #dbeafe 1px, transparent 1px),
+		linear-gradient(to bottom, #dbeafe 1px, transparent 1px);
+	background-size: 72px 72px;
+	mask-image:
+		radial-gradient(circle at top right, transparent 0%, black 25%, transparent 70%),
+		linear-gradient(to bottom, transparent, black 12%, black 85%, transparent 100%);
+	mask-composite: intersect;
+	-webkit-mask-image:
+		radial-gradient(circle at top right, transparent 0%, black 25%, transparent 70%),
+		linear-gradient(to bottom, transparent, black 12%, black 85%, transparent 100%);
+	-webkit-mask-composite: source-in;
+}
+
 .dark .bg-grid-hero-overlay-bottom {
 	background-image:
-		linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent .5px),
-		linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent .5px);
+		linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent .5px),
+		linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent .5px);
+}
+
+.dark .bg-grid-corner-fade {
+	background-image:
+		linear-gradient(to right, rgba(255, 255, 255, 0.06) 1px, transparent 1px),
+		linear-gradient(to bottom, rgba(255, 255, 255, 0.06) 1px, transparent 1px);
 }
