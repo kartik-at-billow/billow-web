@@ -2,9 +2,9 @@ import { motion } from "framer-motion";
 import { ArrowRight, ArrowUpRight } from "lucide-react";
 import { Link } from "react-router";
 import { SectionIntro } from "@/components/SectionIntro";
+import { SERVICES } from "@/lib/services";
 
-
-function ServiceCard({ icon: Icon, number, title, description, index }) {
+function ServiceCard({ slug, icon: Icon, title, description, index }) {
 	return (
 		<motion.a
 			href={`/services/${slug}`}
@@ -15,11 +15,11 @@ function ServiceCard({ icon: Icon, number, title, description, index }) {
 			className="group flex flex-col rounded-xl border border-neutral-300 bg-blue-50 p-7 transition-colors duration-300 hover:border-brand-navy hover:bg-brand-navy-fixed dark:border-white/10 dark:bg-brand-midnight"
 		>
 			<div className="flex items-center justify-between">
-				<span className="flex size-12 items-center justify-center rounded-lg bg-brand-sky text-brand-navy transition-colors duration-300 group-hover:bg-white/10 group-hover:text-white">
+				<span className="flex size-12 items-center justify-center rounded-lg bg-brand-sky text-brand-navy-fixed transition-colors duration-300 group-hover:bg-white/10 group-hover:text-white">
 					<Icon className="size-6" />
 				</span>
 				<span className="font-display text-sm font-semibold text-muted-foreground transition-colors duration-300 group-hover:text-white/50">
-					{number}
+					{String(index + 1).padStart(2, "0")}
 				</span>
 			</div>
 

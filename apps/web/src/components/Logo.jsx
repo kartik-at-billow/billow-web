@@ -9,7 +9,7 @@ export function Logo({ className }) {
 				src="/billow_logo.svg"
 				alt="Billow LLC — Committed to Your Success"
 				className={cn(
-					"h-10 w-auto select-none",
+					"h-10 w-auto select-none dark:brightness-0 dark:invert",
 					className,
 				)}
 			/>

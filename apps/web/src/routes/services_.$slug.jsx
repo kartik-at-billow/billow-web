@@ -9,16 +9,16 @@ import { CASE_STUDIES } from "@/lib/caseStudies";
 
 function IncludedCard({ icon: Icon, title, description, index }) {
 	return (
-		<div className="rounded-xl border border-neutral-300 bg-blue-50 p-6">
+		<div className="rounded-xl border border-neutral-300 bg-blue-50 p-6 dark:border-white/10 dark:bg-brand-midnight">
 			<div className="flex items-center justify-between">
-				<span className="flex size-9 items-center justify-center rounded-lg border border-neutral-300 text-brand-navy">
+				<span className="flex size-9 items-center justify-center rounded-lg border border-neutral-300 text-brand-navy dark:border-white/10">
 					<Icon className="size-4" />
 				</span>
 				<span className="text-xs font-semibold text-muted-foreground">
 					{String(index + 1).padStart(2, "0")}
 				</span>
 			</div>
-			<h3 className="mt-4 text-base font-semibold text-neutral-900">{title}</h3>
+			<h3 className="mt-4 text-base font-semibold text-neutral-900 dark:text-white">{title}</h3>
 			<p className="mt-2 text-sm leading-relaxed text-muted-foreground">
 				{description}
 			</p>
@@ -34,7 +34,7 @@ export default function ServiceDetail() {
 		: [];
 
 	return (
-		<div className="min-h-screen bg-blue-50 text-foreground antialiased">
+		<div className="min-h-screen bg-blue-50 text-foreground antialiased dark:bg-brand-midnight">
 			<Navbar />
 			<main className="pt-24">
 				{service ? (
@@ -50,7 +50,7 @@ export default function ServiceDetail() {
 									<p className="text-xs font-bold uppercase tracking-[0.2em] text-brand-navy">
 										{service.eyebrow}
 									</p>
-									<h1 className="mt-3 text-3xl font-extrabold leading-[1.1] tracking-tight text-neutral-900 sm:text-4xl md:text-5xl">
+									<h1 className="mt-3 text-3xl font-extrabold leading-[1.1] tracking-tight text-neutral-900 dark:text-white sm:text-4xl md:text-5xl">
 										{service.headline}
 									</h1>
 									<p className="mt-4 text-sm text-muted-foreground sm:text-base">
@@ -60,12 +60,12 @@ export default function ServiceDetail() {
 							</div>
 
 							<div className="mx-auto max-w-[1400px] px-5">
-								<div className="mt-6 flex max-w-2xl flex-wrap gap-x-10 gap-y-3 border-t border-neutral-300 pb-16 pt-6">
+								<div className="mt-6 flex max-w-2xl flex-wrap gap-x-10 gap-y-3 border-t border-neutral-300 pb-16 pt-6 dark:border-white/10">
 									<div>
 										<p className="text-xs font-bold uppercase tracking-widest text-muted-foreground">
 											Typical Engagement
 										</p>
-										<p className="mt-1 text-sm font-semibold text-neutral-900">
+										<p className="mt-1 text-sm font-semibold text-neutral-900 dark:text-white">
 											{service.meta.engagement}
 										</p>
 									</div>
@@ -73,23 +73,23 @@ export default function ServiceDetail() {
 										<p className="text-xs font-bold uppercase tracking-widest text-muted-foreground">
 											Team Size
 										</p>
-										<p className="mt-1 text-sm font-semibold text-neutral-900">
+										<p className="mt-1 text-sm font-semibold text-neutral-900 dark:text-white">
 											{service.meta.teamSize}
 										</p>
 									</div>
 								</div>
 							</div>
 
-							<div className="border-t border-neutral-300 mt-16" />
+							<div className="border-t border-neutral-300 mt-16 dark:border-white/10" />
 
 							{/* Overview */}
-							<section className="border-b border-neutral-300 py-16 mt-16">
+							<section className="border-b border-neutral-300 py-16 mt-16 dark:border-white/10">
 								<div className="mx-auto grid max-w-[1400px] gap-8 px-5 lg:grid-cols-[1fr_1.3fr] mb-16">
 									<div>
 										<p className="text-xs font-bold uppercase tracking-[0.2em] text-brand-navy">
 											{service.overview.eyebrow}
 										</p>
-										<h2 className="mt-3 text-2xl font-extrabold tracking-tight text-neutral-900 sm:text-3xl">
+										<h2 className="mt-3 text-2xl font-extrabold tracking-tight text-neutral-900 dark:text-white sm:text-3xl">
 											{service.overview.headline}
 										</h2>
 									</div>
@@ -109,13 +109,13 @@ export default function ServiceDetail() {
 
 						{/* What's Included */}
 						<section
-							className={`bg-blue-100 py-16 ${related.length > 0 ? "border-b border-neutral-300" : ""}`}
+							className={`bg-blue-100 py-16 dark:bg-white/5 ${related.length > 0 ? "border-b border-neutral-300 dark:border-white/10" : ""}`}
 						>
 							<div className="mx-auto max-w-[1400px] px-5">
 								<p className="text-xs font-bold uppercase tracking-[0.2em] text-brand-navy">
 									What's Included
 								</p>
-								<h2 className="mt-3 max-w-2xl text-2xl font-extrabold tracking-tight text-neutral-900 sm:text-3xl">
+								<h2 className="mt-3 max-w-2xl text-2xl font-extrabold tracking-tight text-neutral-900 dark:text-white sm:text-3xl">
 									A complete {service.title.toLowerCase()} practice, in one engagement.
 								</h2>
 
@@ -134,7 +134,7 @@ export default function ServiceDetail() {
 									<p className="text-xs font-bold uppercase tracking-[0.2em] text-brand-navy">
 										Related Work
 									</p>
-									<h2 className="mt-3 max-w-2xl text-2xl font-extrabold tracking-tight text-neutral-900 sm:text-3xl">
+									<h2 className="mt-3 max-w-2xl text-2xl font-extrabold tracking-tight text-neutral-900 dark:text-white sm:text-3xl">
 										Selected {service.title.toLowerCase()} engagements.
 									</h2>
 
