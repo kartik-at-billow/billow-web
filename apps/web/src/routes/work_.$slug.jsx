@@ -128,18 +128,18 @@ export default function CaseStudyDetail() {
 						{/* Next Case Study */}
 						<Link
 							to={`/work/${nextStudy.slug}`}
-							className="group block bg-blue-50 px-5 py-20 transition-colors duration-300 hover:bg-brand-navy-fixed dark:bg-brand-midnight dark:hover:bg-brand-navy-light"
+							className="group block bg-blue-50 px-5 py-20 transition-colors duration-300 hover:bg-brand-navy-fixed dark:bg-brand-midnight dark:hover:bg-brand-sky"
 						>
 							<div className="mx-auto flex max-w-[1400px] items-center justify-between gap-6">
 								<div>
-									<p className="text-xs font-bold uppercase tracking-[0.2em] text-brand-navy transition-colors duration-300 group-hover:text-brand-sky">
+									<p className="text-xs font-bold uppercase tracking-[0.2em] text-brand-navy transition-colors duration-300 group-hover:text-brand-sky dark:group-hover:text-brand-navy-fixed">
 										Next Case Study
 									</p>
-									<h2 className="mt-3 max-w-2xl text-2xl font-extrabold tracking-tight text-neutral-900 transition-colors duration-300 group-hover:text-white dark:text-white sm:text-3xl md:text-4xl">
+									<h2 className="mt-3 max-w-2xl text-2xl font-extrabold tracking-tight text-neutral-900 transition-colors duration-300 group-hover:text-white dark:text-white dark:group-hover:text-neutral-900 sm:text-3xl md:text-4xl">
 										{nextStudy.title}
 									</h2>
 								</div>
-								<ArrowUpRight className="size-8 shrink-0 text-neutral-900 transition-all duration-300 group-hover:-translate-y-1 group-hover:translate-x-1 group-hover:text-white dark:text-white" />
+								<ArrowUpRight className="size-8 shrink-0 text-neutral-900 transition-all duration-300 group-hover:-translate-y-1 group-hover:translate-x-1 group-hover:text-white dark:text-white dark:group-hover:text-neutral-900" />
 							</div>
 						</Link>
 
