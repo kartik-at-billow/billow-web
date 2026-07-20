@@ -6,35 +6,34 @@ import { SERVICES } from "@/lib/services";
 
 function ServiceCard({ slug, icon: Icon, title, description, index }) {
 	return (
-		<motion.a
-			href={`/services/${slug}`}
+		<motion.div
+			className="h-full"
 			initial={{ opacity: 0, y: 24 }}
 			whileInView={{ opacity: 1, y: 0 }}
 			viewport={{ once: true, margin: "-60px" }}
 			transition={{ duration: 0.45, delay: index * 0.06 }}
-			className="group flex flex-col rounded-xl border border-neutral-300 bg-blue-50 p-7 transition-colors duration-300 hover:border-brand-navy hover:bg-brand-navy-fixed dark:border-white/10 dark:bg-brand-midnight"
 		>
-			<div className="flex items-center justify-between">
+			<Link
+				to={`/services/${slug}`}
+				className="group flex h-full flex-col rounded-xl border border-neutral-300 bg-blue-50 p-7 transition-colors duration-300 hover:border-brand-navy hover:bg-brand-navy-fixed dark:border-white/10 dark:bg-brand-midnight"
+			>
 				<span className="flex size-12 items-center justify-center rounded-lg bg-brand-sky text-brand-navy-fixed transition-colors duration-300 group-hover:bg-white/10 group-hover:text-white dark:bg-white/10 dark:text-white dark:group-hover:bg-brand-sky dark:group-hover:text-brand-navy-fixed">
 					<Icon className="size-6" />
 				</span>
-				<span className="font-display text-sm font-semibold text-muted-foreground transition-colors duration-300 group-hover:text-white/50">
-					{String(index + 1).padStart(2, "0")}
+
+				<h3 className="mt-6 text-lg font-semibold text-neutral-900 transition-colors duration-300 group-hover:text-white dark:text-white">
+					{title}
+				</h3>
+				<p className="mt-3 text-sm leading-relaxed text-muted-foreground transition-colors duration-300 group-hover:text-white/75">
+					{description}
+				</p>
+
+				<span className="mt-6 inline-flex items-center gap-1 text-sm font-semibold text-brand-navy transition-colors duration-300 group-hover:text-white">
+					Learn more
+					<ArrowUpRight className="size-4" />
 				</span>
-			</div>
-
-			<h3 className="mt-6 text-lg font-semibold text-neutral-900 transition-colors duration-300 group-hover:text-white dark:text-white">
-				{title}
-			</h3>
-			<p className="mt-3 text-sm leading-relaxed text-muted-foreground transition-colors duration-300 group-hover:text-white/75">
-				{description}
-			</p>
-
-			<span className="mt-6 inline-flex items-center gap-1 text-sm font-semibold text-brand-navy transition-colors duration-300 group-hover:text-white">
-				Learn more
-				<ArrowUpRight className="size-4" />
-			</span>
-		</motion.a>
+			</Link>
+		</motion.div>
 	);
 }
 
