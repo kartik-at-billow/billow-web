@@ -7,17 +7,12 @@ import { Footer } from "@/components/Footer";
 import { SERVICES } from "@/lib/services";
 import { CASE_STUDIES } from "@/lib/caseStudies";
 
-function IncludedCard({ icon: Icon, title, description, index }) {
+function IncludedCard({ icon: Icon, title, description }) {
 	return (
 		<div className="rounded-xl border border-neutral-300 bg-blue-50 p-6 dark:border-white/10 dark:bg-brand-midnight">
-			<div className="flex items-center justify-between">
-				<span className="flex size-9 items-center justify-center rounded-lg border border-neutral-300 text-brand-navy dark:border-white/10">
-					<Icon className="size-4" />
-				</span>
-				<span className="text-xs font-semibold text-muted-foreground">
-					{String(index + 1).padStart(2, "0")}
-				</span>
-			</div>
+			<span className="flex size-9 items-center justify-center rounded-lg border border-neutral-300 text-brand-navy dark:border-white/10">
+				<Icon className="size-4" />
+			</span>
 			<h3 className="mt-4 text-base font-semibold text-neutral-900 dark:text-white">{title}</h3>
 			<p className="mt-2 text-sm leading-relaxed text-muted-foreground">
 				{description}
@@ -120,8 +115,8 @@ export default function ServiceDetail() {
 								</h2>
 
 								<div className="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
-									{service.included.map((item, i) => (
-										<IncludedCard key={item.title} {...item} index={i} />
+									{service.included.map((item) => (
+										<IncludedCard key={item.title} {...item} />
 									))}
 								</div>
 							</div>
